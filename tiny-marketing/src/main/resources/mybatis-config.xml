@@ -13,6 +13,9 @@
 
     <typeAliases>
         <typeAlias alias="Award" type="com.andyadc.marketing.infrastructure.persistence.entity.Award"/>
+        <typeAlias alias="Strategy" type="com.andyadc.marketing.infrastructure.persistence.entity.Strategy"/>
+        <typeAlias alias="StrategyAward" type="com.andyadc.marketing.infrastructure.persistence.entity.StrategyAward"/>
+        <typeAlias alias="StrategyRule" type="com.andyadc.marketing.infrastructure.persistence.entity.StrategyRule"/>
     </typeAliases>
 
 </configuration>
