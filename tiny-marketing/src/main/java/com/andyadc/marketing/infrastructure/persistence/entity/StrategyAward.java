@@ -13,7 +13,7 @@ public class StrategyAward implements Serializable {
     /**
      * 自增ID
      */
-    private Integer id;
+    private Long id;
     /**
      * 抽奖策略ID
      */
@@ -60,11 +60,11 @@ public class StrategyAward implements Serializable {
     private LocalDateTime updateTime;
 
     @Id
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
