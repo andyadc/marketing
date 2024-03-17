@@ -10,7 +10,7 @@ public class AssertUtils {
     private AssertUtils() {
     }
 
-    public static void assertNotNull(Object object, String message) {
+    public static void notNull(Object object, String message) {
         if (object == null) {
             throw new IllegalArgumentException(message);
         }
@@ -23,25 +23,19 @@ public class AssertUtils {
     }
 
     public static void notEmpty(String string, String message) {
-        if (string == null) {
+        if (StringUtils.isEmpty(string)) {
             throw new IllegalArgumentException(message);
         }
     }
 
-    public static void assertNotEmpty(Collection<?> collection, String message) {
+    public static void notEmpty(Collection<?> collection, String message) {
         if (collection == null || collection.isEmpty()) {
             throw new IllegalArgumentException(message);
         }
     }
 
-    public static void assertNotBlank(String string, String message) {
-        if (string == null) {
-            throw new IllegalArgumentException(message);
-        }
-    }
-
-    public static void notNull(Object object, String message) {
-        if (object == null) {
+    public static void notBlank(String string, String message) {
+        if (StringUtils.isBlank(string)) {
             throw new IllegalArgumentException(message);
         }
     }
