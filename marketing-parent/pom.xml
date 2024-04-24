@@ -20,9 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.andyadc.marketing</groupId>
-            <artifactId>marketing-core</artifactId>
-        </dependency>
+			<groupId>com.andyadc.dddframework</groupId>
+			<artifactId>base-core</artifactId>
+		</dependency>
     </dependencies>
 
     <dependencyManagement>
