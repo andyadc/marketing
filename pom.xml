@@ -9,7 +9,7 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>marketing-base</module>
+        <module>base</module>
         <module>marketing-bom</module>
         <module>marketing-parent</module>
         <module>tiny-marketing</module>
