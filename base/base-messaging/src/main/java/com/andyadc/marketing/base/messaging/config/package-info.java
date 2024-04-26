@@ -1,0 +1,1 @@
+package com.andyadc.marketing.base.messaging.config;
