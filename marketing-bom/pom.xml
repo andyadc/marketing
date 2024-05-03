@@ -41,12 +41,12 @@
             <!-- base -->
 			<dependency>
 				<groupId>com.andyadc.dddframework</groupId>
-				<artifactId>base-core</artifactId>
+				<artifactId>marketing-base-core</artifactId>
 				<version>${base.properties}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.andyadc.dddframework</groupId>
-				<artifactId>base-web</artifactId>
+				<artifactId>marketing-base-web</artifactId>
 				<version>${base.properties}</version>
 			</dependency>
 

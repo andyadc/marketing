@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
 			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>base-core</artifactId>
+			<artifactId>marketing-base-core</artifactId>
 		</dependency>
     </dependencies>
 
