@@ -9,18 +9,41 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>base</module>
+        <module>marketing-base</module>
         <module>marketing-bom</module>
         <module>marketing-parent</module>
         <module>tiny-marketing</module>
-    </modules>
+	</modules>
 
-    <packaging>pom</packaging>
-    <description>marketing</description>
+	<packaging>pom</packaging>
+	<description>marketing</description>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+	<properties>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>2.7.15</version>
+					<configuration>
+						<finalName>${project.artifactId}</finalName>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<!--把依赖的包都打包到生成的jar包中-->
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>
