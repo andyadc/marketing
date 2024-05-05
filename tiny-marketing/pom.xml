@@ -29,7 +29,7 @@
 
         <dependency>
 			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>base-web</artifactId>
+			<artifactId>marketing-base-web</artifactId>
 		</dependency>
 
 		<dependency>

@@ -1,7 +1,7 @@
 package com.andyadc.marketing.config;
 
-import com.andyadc.marketing.base.core.serializer.JodaDateTimeJsonDeserializer;
-import com.andyadc.marketing.base.core.serializer.JodaDateTimeJsonSerializer;
+import com.andyadc.dddframework.base.core.serializer.JodaDateTimeJsonDeserializer;
+import com.andyadc.dddframework.base.core.serializer.JodaDateTimeJsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.joda.time.DateTime;
