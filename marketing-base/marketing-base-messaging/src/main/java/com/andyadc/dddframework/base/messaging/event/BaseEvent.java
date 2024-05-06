@@ -20,8 +20,8 @@ public abstract class BaseEvent<T> {
 			this.data = builder.data;
 		}
 
-		public static Builder build() {
-			return new Builder<>();
+		public static <T> Builder<T> builder() {
+			return new Builder<T>();
 		}
 
 		public String getId() {
@@ -66,17 +66,17 @@ public abstract class BaseEvent<T> {
 			public Builder() {
 			}
 
-			public Builder id(String id) {
+			public Builder<T> id(String id) {
 				this.id = id;
 				return this;
 			}
 
-			public Builder timestamp(LocalDateTime timestamp) {
+			public Builder<T> timestamp(LocalDateTime timestamp) {
 				this.timestamp = timestamp;
 				return this;
 			}
 
-			public Builder data(T data) {
+			public Builder<T> data(T data) {
 				this.data = data;
 				return this;
 			}
