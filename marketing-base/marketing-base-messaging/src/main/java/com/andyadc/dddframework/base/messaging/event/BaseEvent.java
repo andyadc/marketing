@@ -21,7 +21,7 @@ public abstract class BaseEvent<T> {
 		}
 
 		public static <T> Builder<T> builder() {
-			return new Builder<T>();
+			return new Builder<>();
 		}
 
 		public String getId() {
