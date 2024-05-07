@@ -22,12 +22,16 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+		</dependency>
 
-        <dependency>
+		<dependency>
+			<groupId>com.andyadc.dddframework</groupId>
+			<artifactId>marketing-base-messaging</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.andyadc.dddframework</groupId>
 			<artifactId>marketing-base-web</artifactId>
 		</dependency>
