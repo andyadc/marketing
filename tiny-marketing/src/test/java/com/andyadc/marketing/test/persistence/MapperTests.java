@@ -1,7 +1,7 @@
 package com.andyadc.marketing.test.persistence;
 
-import com.andyadc.marketing.infrastructure.persistence.entity.Award;
 import com.andyadc.marketing.infrastructure.persistence.mapper.AwardMapper;
+import com.andyadc.marketing.infrastructure.persistence.po.Award;
 import com.andyadc.marketing.test.AbstractTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

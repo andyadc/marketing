@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.persistence.entity;
+package com.andyadc.marketing.infrastructure.persistence.po;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class RaffleActivityAccount implements Serializable {
+public class RaffleActivityAccountFlow implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,25 +27,25 @@ public class RaffleActivityAccount implements Serializable {
      */
     private Integer totalCount;
     /**
-     * 总次数-剩余
-     */
-    private Integer totalCountSurplus;
-    /**
      * 日次数
      */
     private Integer dayCount;
-    /**
-     * 日次数-剩余
-     */
-    private Integer dayCountSurplus;
     /**
      * 月次数
      */
     private Integer monthCount;
     /**
-     * 月次数-剩余
+     * 流水ID - 生成的唯一ID
      */
-    private Integer monthCountSurplus;
+    private String flowId;
+    /**
+     * 流水渠道（activity-活动领取、sale-购买、redeem-兑换、free-免费赠送）
+     */
+    private String flowChannel;
+    /**
+     * 业务ID（外部透传，活动ID、订单ID）
+     */
+    private String bizId;
     /**
      * 创建时间
      */
@@ -88,28 +88,12 @@ public class RaffleActivityAccount implements Serializable {
         this.totalCount = totalCount;
     }
 
-    public Integer getTotalCountSurplus() {
-        return totalCountSurplus;
-    }
-
-    public void setTotalCountSurplus(Integer totalCountSurplus) {
-        this.totalCountSurplus = totalCountSurplus;
-    }
-
     public Integer getDayCount() {
         return dayCount;
     }
 
     public void setDayCount(Integer dayCount) {
         this.dayCount = dayCount;
-    }
-
-    public Integer getDayCountSurplus() {
-        return dayCountSurplus;
-    }
-
-    public void setDayCountSurplus(Integer dayCountSurplus) {
-        this.dayCountSurplus = dayCountSurplus;
     }
 
     public Integer getMonthCount() {
@@ -120,12 +104,28 @@ public class RaffleActivityAccount implements Serializable {
         this.monthCount = monthCount;
     }
 
-    public Integer getMonthCountSurplus() {
-        return monthCountSurplus;
+    public String getFlowId() {
+        return flowId;
     }
 
-    public void setMonthCountSurplus(Integer monthCountSurplus) {
-        this.monthCountSurplus = monthCountSurplus;
+    public void setFlowId(String flowId) {
+        this.flowId = flowId == null ? null : flowId.trim();
+    }
+
+    public String getFlowChannel() {
+        return flowChannel;
+    }
+
+    public void setFlowChannel(String flowChannel) {
+        this.flowChannel = flowChannel == null ? null : flowChannel.trim();
+    }
+
+    public String getBizId() {
+        return bizId;
+    }
+
+    public void setBizId(String bizId) {
+        this.bizId = bizId == null ? null : bizId.trim();
     }
 
     public LocalDateTime getCreateTime() {

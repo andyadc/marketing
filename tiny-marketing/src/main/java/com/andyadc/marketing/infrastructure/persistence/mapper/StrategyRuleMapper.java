@@ -1,6 +1,6 @@
 package com.andyadc.marketing.infrastructure.persistence.mapper;
 
-import com.andyadc.marketing.infrastructure.persistence.entity.StrategyRule;
+import com.andyadc.marketing.infrastructure.persistence.po.StrategyRule;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

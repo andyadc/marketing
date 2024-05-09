@@ -1,6 +1,6 @@
 package com.andyadc.marketing.infrastructure.persistence.mapper;
 
-import com.andyadc.marketing.infrastructure.persistence.entity.StrategyAward;
+import com.andyadc.marketing.infrastructure.persistence.po.StrategyAward;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

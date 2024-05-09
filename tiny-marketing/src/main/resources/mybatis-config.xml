@@ -12,26 +12,26 @@
     </settings>
 
     <typeAliases>
-        <typeAlias alias="Award" type="com.andyadc.marketing.infrastructure.persistence.entity.Award"/>
-        <typeAlias alias="Strategy" type="com.andyadc.marketing.infrastructure.persistence.entity.Strategy"/>
-        <typeAlias alias="StrategyAward" type="com.andyadc.marketing.infrastructure.persistence.entity.StrategyAward"/>
-        <typeAlias alias="StrategyRule" type="com.andyadc.marketing.infrastructure.persistence.entity.StrategyRule"/>
-        <typeAlias alias="RaffleActivity"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivity"/>
-        <typeAlias alias="RaffleActivitySku"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivitySku"/>
-        <typeAlias alias="RaffleActivityAccount"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivityAccount"/>
-        <typeAlias alias="RaffleActivityAccountFlow"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivityAccountFlow"/>
-        <typeAlias alias="RaffleActivityCount"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivityCount"/>
-        <typeAlias alias="RaffleActivityOrder"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivityOrder"/>
-        <typeAlias alias="RuleTree" type="com.andyadc.marketing.infrastructure.persistence.entity.RuleTree"/>
-        <typeAlias alias="RuleTreeNode" type="com.andyadc.marketing.infrastructure.persistence.entity.RuleTreeNode"/>
-        <typeAlias alias="RuleTreeNodeLine"
-                   type="com.andyadc.marketing.infrastructure.persistence.entity.RuleTreeNodeLine"/>
-    </typeAliases>
+		<typeAlias alias="Award" type="com.andyadc.marketing.infrastructure.persistence.po.Award"/>
+		<typeAlias alias="Strategy" type="com.andyadc.marketing.infrastructure.persistence.po.Strategy"/>
+		<typeAlias alias="StrategyAward" type="com.andyadc.marketing.infrastructure.persistence.po.StrategyAward"/>
+		<typeAlias alias="StrategyRule" type="com.andyadc.marketing.infrastructure.persistence.po.StrategyRule"/>
+		<typeAlias alias="RaffleActivity"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivity"/>
+		<typeAlias alias="RaffleActivitySku"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivitySku"/>
+		<typeAlias alias="RaffleActivityAccount"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityAccount"/>
+		<typeAlias alias="RaffleActivityAccountFlow"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityAccountFlow"/>
+		<typeAlias alias="RaffleActivityCount"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityCount"/>
+		<typeAlias alias="RaffleActivityOrder"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityOrder"/>
+		<typeAlias alias="RuleTree" type="com.andyadc.marketing.infrastructure.persistence.po.RuleTree"/>
+		<typeAlias alias="RuleTreeNode" type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNode"/>
+		<typeAlias alias="RuleTreeNodeLine"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNodeLine"/>
+	</typeAliases>
 
 </configuration>

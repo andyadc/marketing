@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.andyadc.marketing.infrastructure.persistence.mapper.StrategyAwardMapper">
-    <resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.entity.StrategyAward">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="strategy_id" jdbcType="INTEGER" property="strategyId"/>
-        <result column="award_id" jdbcType="INTEGER" property="awardId"/>
-        <result column="award_title" jdbcType="VARCHAR" property="awardTitle"/>
-        <result column="award_subtitle" jdbcType="VARCHAR" property="awardSubtitle"/>
-        <result column="award_count" jdbcType="INTEGER" property="awardCount"/>
-        <result column="award_count_surplus" jdbcType="INTEGER" property="awardCountSurplus"/>
-        <result column="award_rate" jdbcType="DECIMAL" property="awardRate"/>
-        <result column="rule_models" jdbcType="VARCHAR" property="ruleModels"/>
-        <result column="sort" jdbcType="INTEGER" property="sort"/>
+    <resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.po.StrategyAward">
+		<id column="id" jdbcType="BIGINT" property="id"/>
+		<result column="strategy_id" jdbcType="INTEGER" property="strategyId"/>
+		<result column="award_id" jdbcType="INTEGER" property="awardId"/>
+		<result column="award_title" jdbcType="VARCHAR" property="awardTitle"/>
+		<result column="award_subtitle" jdbcType="VARCHAR" property="awardSubtitle"/>
+		<result column="award_count" jdbcType="INTEGER" property="awardCount"/>
+		<result column="award_count_surplus" jdbcType="INTEGER" property="awardCountSurplus"/>
+		<result column="award_rate" jdbcType="DECIMAL" property="awardRate"/>
+		<result column="rule_models" jdbcType="VARCHAR" property="ruleModels"/>
+		<result column="sort" jdbcType="INTEGER" property="sort"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
     </resultMap>

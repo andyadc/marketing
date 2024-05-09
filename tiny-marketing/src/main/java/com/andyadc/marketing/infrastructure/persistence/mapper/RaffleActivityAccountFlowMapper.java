@@ -1,6 +1,6 @@
 package com.andyadc.marketing.infrastructure.persistence.mapper;
 
-import com.andyadc.marketing.infrastructure.persistence.entity.RaffleActivityAccountFlow;
+import com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityAccountFlow;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.andyadc.marketing.infrastructure.persistence.mapper.RuleTreeNodeMapper">
-    <resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.entity.RuleTreeNode">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="tree_id" jdbcType="VARCHAR" property="treeId"/>
-        <result column="rule_key" jdbcType="VARCHAR" property="ruleKey"/>
-        <result column="rule_desc" jdbcType="VARCHAR" property="ruleDesc"/>
-        <result column="rule_value" jdbcType="VARCHAR" property="ruleValue"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
-    </resultMap>
+    <resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNode">
+		<id column="id" jdbcType="BIGINT" property="id"/>
+		<result column="tree_id" jdbcType="VARCHAR" property="treeId"/>
+		<result column="rule_key" jdbcType="VARCHAR" property="ruleKey"/>
+		<result column="rule_desc" jdbcType="VARCHAR" property="ruleDesc"/>
+		<result column="rule_value" jdbcType="VARCHAR" property="ruleValue"/>
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+	</resultMap>
 
     <sql id="Base_Column_List">
         id, tree_id, rule_key, rule_desc, rule_value, create_time, update_time

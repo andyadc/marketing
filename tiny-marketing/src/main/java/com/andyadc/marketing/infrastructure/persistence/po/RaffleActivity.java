@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.persistence.entity;
+package com.andyadc.marketing.infrastructure.persistence.po;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

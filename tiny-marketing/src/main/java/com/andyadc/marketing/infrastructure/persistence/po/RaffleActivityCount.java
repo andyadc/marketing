@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.persistence.entity;
+package com.andyadc.marketing.infrastructure.persistence.po;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class RuleTreeNode implements Serializable {
+public class RaffleActivityCount implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,21 +15,21 @@ public class RuleTreeNode implements Serializable {
      */
     private Long id;
     /**
-     * 规则树ID
+     * 活动次数编号
      */
-    private String treeId;
+    private Integer activityCountId;
     /**
-     * 规则Key
+     * 总次数
      */
-    private String ruleKey;
+    private Integer totalCount;
     /**
-     * 规则描述
+     * 日次数
      */
-    private String ruleDesc;
+    private Integer dayCount;
     /**
-     * 规则比值
+     * 月次数
      */
-    private String ruleValue;
+    private Integer monthCount;
     /**
      * 创建时间
      */
@@ -48,36 +48,36 @@ public class RuleTreeNode implements Serializable {
         this.id = id;
     }
 
-    public String getTreeId() {
-        return treeId;
+    public Integer getActivityCountId() {
+        return activityCountId;
     }
 
-    public void setTreeId(String treeId) {
-        this.treeId = treeId == null ? null : treeId.trim();
+    public void setActivityCountId(Integer activityCountId) {
+        this.activityCountId = activityCountId;
     }
 
-    public String getRuleKey() {
-        return ruleKey;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setRuleKey(String ruleKey) {
-        this.ruleKey = ruleKey == null ? null : ruleKey.trim();
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
-    public String getRuleDesc() {
-        return ruleDesc;
+    public Integer getDayCount() {
+        return dayCount;
     }
 
-    public void setRuleDesc(String ruleDesc) {
-        this.ruleDesc = ruleDesc == null ? null : ruleDesc.trim();
+    public void setDayCount(Integer dayCount) {
+        this.dayCount = dayCount;
     }
 
-    public String getRuleValue() {
-        return ruleValue;
+    public Integer getMonthCount() {
+        return monthCount;
     }
 
-    public void setRuleValue(String ruleValue) {
-        this.ruleValue = ruleValue == null ? null : ruleValue.trim();
+    public void setMonthCount(Integer monthCount) {
+        this.monthCount = monthCount;
     }
 
     public LocalDateTime getCreateTime() {
