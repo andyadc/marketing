@@ -1,0 +1,16 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/marketing?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: andyadc
+        hikari:
+            pool-name: marketing-scheduler-hikari-pool
+            minimum-idle: 5
+            maximum-pool-size: 10
+            connection-timeout: 6000
+            idle-timeout: 600000
+            max-lifetime: 1765000
+    task:
+        scheduling:
+            thread-name-prefix: marketing-scheduler-
