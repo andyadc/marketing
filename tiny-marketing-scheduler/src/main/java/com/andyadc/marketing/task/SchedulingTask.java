@@ -14,4 +14,9 @@ public class SchedulingTask {
 	public void task001() {
 		logger.info("task001");
 	}
+
+	@Scheduled(fixedDelay = 3000L, initialDelay = 10000L)
+	public void task002() {
+		logger.info("task002");
+	}
 }
