@@ -47,6 +47,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.andyadc.dddframework</groupId>
+				<artifactId>marketing-base-util</artifactId>
+				<version>${base.properties}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andyadc.dddframework</groupId>
 				<artifactId>marketing-base-messaging</artifactId>
 				<version>${base.properties}</version>
 			</dependency>
