@@ -14,6 +14,7 @@
 		<module>marketing-parent</module>
 		<module>tiny-marketing</module>
 		<module>tiny-marketing-scheduler</module>
+		<module>tiny-marketing-scheduler-test</module>
 	</modules>
 
 	<packaging>pom</packaging>
