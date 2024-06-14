@@ -21,7 +21,7 @@
         <spring-boot.version>2.7.15</spring-boot.version>
         <mybatis.version>3.5.15</mybatis.version>
         <mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
-        <guava.version>32.1.3-jre</guava.version>
+        <guava.version>33.2.1-jre</guava.version>
         <joda-time.version>2.12.7</joda-time.version>
         <shedlock.version>4.47.0</shedlock.version>
 
