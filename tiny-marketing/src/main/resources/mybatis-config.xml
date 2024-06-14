@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <!-- https://mybatis.org/mybatis-3/configuration.html#settings -->
-    <settings>
-        <setting name="logImpl" value="SLF4J"/>
-        <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <setting name="jdbcTypeForNull" value="NULL"/>
-    </settings>
+	<!-- https://mybatis.org/mybatis-3/configuration.html#settings -->
+	<settings>
+		<setting name="logImpl" value="SLF4J"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="cacheEnabled" value="false"/>
+	</settings>
 
-    <typeAliases>
-		<typeAlias alias="Award" type="com.andyadc.marketing.infrastructure.persistence.po.Award"/>
-		<typeAlias alias="Strategy" type="com.andyadc.marketing.infrastructure.persistence.po.Strategy"/>
-		<typeAlias alias="StrategyAward" type="com.andyadc.marketing.infrastructure.persistence.po.StrategyAward"/>
-		<typeAlias alias="StrategyRule" type="com.andyadc.marketing.infrastructure.persistence.po.StrategyRule"/>
+	<typeAliases>
+		<typeAlias alias="Award"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.Award"/>
+		<typeAlias alias="Strategy"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.Strategy"/>
+		<typeAlias alias="StrategyAward"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.StrategyAward"/>
+		<typeAlias alias="StrategyRule"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.StrategyRule"/>
 		<typeAlias alias="RaffleActivity"
 				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivity"/>
 		<typeAlias alias="RaffleActivitySku"
@@ -28,8 +33,10 @@
 				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityCount"/>
 		<typeAlias alias="RaffleActivityOrder"
 				   type="com.andyadc.marketing.infrastructure.persistence.po.RaffleActivityOrder"/>
-		<typeAlias alias="RuleTree" type="com.andyadc.marketing.infrastructure.persistence.po.RuleTree"/>
-		<typeAlias alias="RuleTreeNode" type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNode"/>
+		<typeAlias alias="RuleTree"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RuleTree"/>
+		<typeAlias alias="RuleTreeNode"
+				   type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNode"/>
 		<typeAlias alias="RuleTreeNodeLine"
 				   type="com.andyadc.marketing.infrastructure.persistence.po.RuleTreeNodeLine"/>
 	</typeAliases>
