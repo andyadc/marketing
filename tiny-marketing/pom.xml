@@ -12,6 +12,7 @@
 
 	<artifactId>tiny-marketing</artifactId>
 	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
 	<description>tiny marketing</description>
 
@@ -109,6 +110,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 		</plugins>
 	</build>
 

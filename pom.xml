@@ -5,20 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.andyadc.marketing</groupId>
-    <artifactId>marketing</artifactId>
-    <version>1.0.0</version>
+	<artifactId>marketing-architecture</artifactId>
+	<version>1.0.0</version>
 
-    <modules>
+	<modules>
 		<module>marketing-base</module>
 		<module>marketing-bom</module>
 		<module>marketing-parent</module>
-		<module>tiny-marketing</module>
-		<module>tiny-marketing-scheduler</module>
-		<module>tiny-marketing-scheduler-test</module>
 	</modules>
 
 	<packaging>pom</packaging>
-	<description>marketing</description>
+	<description>marketing framework</description>
 
 	<properties>
 		<maven.compiler.source>8</maven.compiler.source>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.andyadc.marketing</groupId>
-        <artifactId>marketing</artifactId>
+        <artifactId>marketing-architecture</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -21,7 +21,7 @@
         <spring-boot.version>2.7.15</spring-boot.version>
         <mybatis.version>3.5.15</mybatis.version>
         <mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
-        <guava.version>33.2.1-jre</guava.version>
+		<guava.version>33.3.0-jre</guava.version>
         <joda-time.version>2.12.7</joda-time.version>
         <shedlock.version>4.47.0</shedlock.version>
 
