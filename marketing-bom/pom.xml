@@ -16,18 +16,18 @@
     <description>marketing - Bill of Materials</description>
 
     <properties>
-        <base.properties>1.0.0</base.properties>
+		<base.properties>1.0.0</base.properties>
 
-        <spring-boot.version>2.7.15</spring-boot.version>
-        <mybatis.version>3.5.15</mybatis.version>
-        <mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
-		<guava.version>33.3.0-jre</guava.version>
-        <joda-time.version>2.12.7</joda-time.version>
-        <shedlock.version>4.47.0</shedlock.version>
+		<spring-boot.version>2.7.15</spring-boot.version>
+		<mybatis.version>3.5.19</mybatis.version>
+		<mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
+		<guava.version>33.3.1-jre</guava.version>
+		<joda-time.version>2.12.7</joda-time.version>
+		<shedlock.version>4.47.0</shedlock.version>
 
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+	</properties>
 
     <dependencyManagement>
         <dependencies>
