@@ -47,6 +47,15 @@ public class Response<T> implements Serializable {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "Response{" +
+			"code=" + code +
+			", message=" + message +
+			", data=" + data +
+			'}';
+	}
+
 	public static class Builder<T> {
 		private String code;
 		private String message;
@@ -74,6 +83,6 @@ public class Response<T> implements Serializable {
 			return this;
 		}
 
-
 	}
+
 }
