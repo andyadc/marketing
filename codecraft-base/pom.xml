@@ -9,20 +9,20 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.andyadc.dddframework</groupId>
-	<artifactId>marketing-base</artifactId>
+	<groupId>com.andyadc.codecraft</groupId>
+	<artifactId>codecraft-base</artifactId>
 	<version>1.0.0</version>
 
 	<packaging>pom</packaging>
 	<description>marketing base</description>
 
 	<modules>
-		<module>marketing-base-core</module>
-		<module>marketing-base-persistence</module>
-		<module>marketing-base-web</module>
-		<module>marketing-base-messaging</module>
-		<module>marketing-base-util</module>
-		<module>marketing-base-quartz</module>
+		<module>codecraft-base-core</module>
+		<module>codecraft-base-persistence</module>
+		<module>codecraft-base-web</module>
+		<module>codecraft-base-messaging</module>
+		<module>codecraft-base-util</module>
+		<module>codecraft-base-quartz</module>
 	</modules>
 
 	<properties>
