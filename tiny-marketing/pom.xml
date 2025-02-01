@@ -28,12 +28,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>marketing-base-messaging</artifactId>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-messaging</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>marketing-base-web</artifactId>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-web</artifactId>
 		</dependency>
 
 		<dependency>
