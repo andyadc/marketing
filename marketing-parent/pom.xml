@@ -20,8 +20,8 @@
 
     <dependencies>
         <dependency>
-			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>marketing-base-core</artifactId>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-core</artifactId>
 		</dependency>
     </dependencies>
 
