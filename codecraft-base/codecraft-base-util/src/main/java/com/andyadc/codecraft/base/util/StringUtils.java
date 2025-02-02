@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.util;
+package com.andyadc.codecraft.base.util;
 
 /**
  * A string utility class that manipulates string.
@@ -386,4 +386,5 @@ public final class StringUtils {
 
 		return str.substring(start, end);
 	}
+
 }

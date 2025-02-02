@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.util;
+package com.andyadc.codecraft.base.util;
 
 import java.lang.management.ManagementFactory;
 import java.net.Inet4Address;
@@ -7,7 +7,7 @@ import java.net.NetworkInterface;
 import java.util.Enumeration;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class IdentifierUtils {
+public final class IdentifierUtils {
 
 	private static final AtomicInteger counter = new AtomicInteger(0);
 	private static String ip;
@@ -65,4 +65,5 @@ public class IdentifierUtils {
 		// format: hostname-ip-pid-clientHash
 		return String.format("%s-%s-%d-%d", hostName, ip, getPid(), clientId);
 	}
+
 }

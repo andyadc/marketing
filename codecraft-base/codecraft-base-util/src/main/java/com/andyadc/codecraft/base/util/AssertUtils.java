@@ -1,11 +1,11 @@
-package com.andyadc.dddframework.base.util;
+package com.andyadc.codecraft.base.util;
 
 import java.util.Collection;
 
 /**
  * Util class for checking arguments.
  */
-public class AssertUtils {
+public final class AssertUtils {
 
 	private AssertUtils() {
 	}
@@ -51,4 +51,5 @@ public class AssertUtils {
 			throw new IllegalStateException(message);
 		}
 	}
+
 }

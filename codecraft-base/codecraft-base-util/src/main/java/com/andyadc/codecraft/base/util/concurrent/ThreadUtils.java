@@ -1,10 +1,10 @@
-package com.andyadc.dddframework.base.util.concurrent;
+package com.andyadc.codecraft.base.util.concurrent;
 
 import java.util.concurrent.TimeUnit;
 
-public final class ThreadUtil {
+public final class ThreadUtils {
 
-	private ThreadUtil() {
+	private ThreadUtils() {
 	}
 
 	public static void sleep(long durationMillis) {
