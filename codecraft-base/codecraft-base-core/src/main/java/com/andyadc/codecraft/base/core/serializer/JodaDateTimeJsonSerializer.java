@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.core.serializer;
+package com.andyadc.codecraft.base.core.serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -13,4 +13,5 @@ public class JodaDateTimeJsonSerializer extends JsonSerializer<DateTime> {
 	public void serialize(DateTime dateTime, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
 		jsonGenerator.writeString(dateTime.toString("yyyy-MM-dd HH:mm:ss"));
 	}
+
 }

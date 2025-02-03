@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.core.model;
+package com.andyadc.codecraft.base.core.model;
 
 import java.io.Serializable;
 

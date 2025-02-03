@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.core.serializer;
+package com.andyadc.codecraft.base.core.serializer;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -17,4 +17,5 @@ public class JodaDateTimeJsonDeserializer extends JsonDeserializer<DateTime> {
 		DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
 		return DateTime.parse(dataString, formatter);
 	}
+
 }
