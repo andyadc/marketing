@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>com.andyadc.marketing</groupId>
-        <artifactId>marketing-architecture</artifactId>
-        <version>1.0.0</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.andyadc.marketing</groupId>
+		<artifactId>marketing-architecture</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
 
-    <artifactId>marketing-bom</artifactId>
-    <version>1.0.0</version>
+	<artifactId>marketing-bom</artifactId>
+	<version>1.0.0</version>
 
-    <packaging>pom</packaging>
-    <description>marketing - Bill of Materials</description>
+	<packaging>pom</packaging>
+	<description>marketing - Bill of Materials</description>
 
-    <properties>
+	<properties>
 		<base.properties>1.0.0</base.properties>
 
 		<spring-boot.version>2.7.15</spring-boot.version>
@@ -29,14 +29,20 @@
 		<maven.compiler.target>8</maven.compiler.target>
 	</properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.andyadc.marketing</groupId>
+				<artifactId>tiny-marketing-api</artifactId>
+				<version>1.0.0</version>
 			</dependency>
 
 			<!-- base -->
@@ -65,7 +71,7 @@
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
 				<version>${mybatis.version}</version>
-            </dependency>
+			</dependency>
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
 				<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -95,12 +101,12 @@
 			</dependency>
 
 		</dependencies>
-    </dependencyManagement>
+	</dependencyManagement>
 
-    <build>
-        <plugins>
+	<build>
+		<plugins>
 
-        </plugins>
-    </build>
+		</plugins>
+	</build>
 
 </project>
