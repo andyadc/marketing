@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.web.auth.annotation;
+package com.andyadc.codecraft.base.web.auth.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

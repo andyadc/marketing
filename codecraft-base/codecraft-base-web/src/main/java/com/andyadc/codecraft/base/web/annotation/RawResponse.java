@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.web.annotation;
+package com.andyadc.codecraft.base.web.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

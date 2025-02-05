@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.web.config;
+package com.andyadc.codecraft.base.web.config;
 
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 

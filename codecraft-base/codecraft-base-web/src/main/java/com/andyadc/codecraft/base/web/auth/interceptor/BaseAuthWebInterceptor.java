@@ -1,6 +1,6 @@
-package com.andyadc.dddframework.base.web.auth.interceptor;
+package com.andyadc.codecraft.base.web.auth.interceptor;
 
-import com.andyadc.dddframework.base.web.interceptor.BaseWebInterceptor;
+import com.andyadc.codecraft.base.web.interceptor.BaseWebInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.web.interceptor;
+package com.andyadc.codecraft.base.web.interceptor;
 
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.HandlerInterceptor;

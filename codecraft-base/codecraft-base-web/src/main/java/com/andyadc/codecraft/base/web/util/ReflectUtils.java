@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.web.util;
+package com.andyadc.codecraft.base.web.util;
 
 public final class ReflectUtils {
 
@@ -6,4 +6,5 @@ public final class ReflectUtils {
 
 		return null;
 	}
+
 }
