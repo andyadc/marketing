@@ -1,4 +1,4 @@
-package com.andyadc.dddframework.base.messaging.event;
+package com.andyadc.codecraft.base.messaging.event;
 
 import java.time.LocalDateTime;
 
