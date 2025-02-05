@@ -43,8 +43,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.andyadc.dddframework</groupId>
-			<artifactId>marketing-base-util</artifactId>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-util</artifactId>
 		</dependency>
 
 		<dependency>
