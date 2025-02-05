@@ -1,6 +1,6 @@
 package com.andyadc.marketing.task;
 
-import com.andyadc.dddframework.base.util.concurrent.ThreadUtil;
+import com.andyadc.codecraft.base.util.concurrent.ThreadUtils;
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ public class SchedulingTask {
 	@Scheduled(cron = "0/7 * * * * ?")
 	public void task001() {
 		logger.info("Task001 Starting - `0/7 * * * * ?` ");
-		ThreadUtil.sleep(10L, TimeUnit.SECONDS);
+		ThreadUtils.sleep(10L, TimeUnit.SECONDS);
 		logger.info("Task001 Ended - `0/7 * * * * ?` ");
 	}
 
