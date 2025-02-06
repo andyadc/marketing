@@ -1,9 +1,9 @@
-package com.andyadc.marketing.api;
+package com.andyadc.marketing.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/api/raffle/activity")
+@RequestMapping("/api/draw/activity")
 @RestController
-public class RaffleActivityController {
+public class DrawActivityController {
 }

@@ -1,9 +1,13 @@
 package com.andyadc.marketing.api.dto;
 
+import java.io.Serializable;
+
 /**
  * 活动抽奖返回对象
  */
-public class ActivityDrawResponseDTO {
+public class ActivityDrawResponseDTO implements Serializable {
+
+	private static final long serialVersionUID = -7424960370842484038L;
 
 	/**
 	 * 奖品ID

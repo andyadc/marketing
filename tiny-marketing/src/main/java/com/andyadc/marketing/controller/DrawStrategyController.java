@@ -1,6 +1,6 @@
-package com.andyadc.marketing.api;
+package com.andyadc.marketing.controller;
 
-import com.andyadc.dddframework.base.core.model.Response;
+import com.andyadc.codecraft.base.core.model.Response;
 import com.andyadc.marketing.api.dto.ActivityDrawRequestDTO;
 import com.andyadc.marketing.api.dto.ActivityDrawResponseDTO;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/api/raffle/strategy")
+@RequestMapping("/api/draw/strategy")
 @RestController
-public class RaffleStrategyController {
+public class DrawStrategyController {
 
 	@RequestMapping(value = "/draw", method = RequestMethod.POST)
 	public Response<ActivityDrawResponseDTO> draw(@RequestBody ActivityDrawRequestDTO request) {
