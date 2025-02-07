@@ -22,8 +22,10 @@
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
 		<guava.version>33.3.1-jre</guava.version>
-		<joda-time.version>2.12.7</joda-time.version>
+		<joda-time.version>2.13.1</joda-time.version>
 		<shedlock.version>4.47.0</shedlock.version>
+
+		<jakarta-validation.version>2.0.2</jakarta-validation.version>
 
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
@@ -65,6 +67,12 @@
 				<groupId>com.andyadc.codecraft</groupId>
 				<artifactId>codecraft-base-web</artifactId>
 				<version>${base.properties}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>jakarta.validation</groupId>
+				<artifactId>jakarta.validation-api</artifactId>
+				<version>${jakarta-validation.version}</version>
 			</dependency>
 
 			<dependency>
