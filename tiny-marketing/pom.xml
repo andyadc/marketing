@@ -36,6 +36,10 @@
 			<groupId>com.andyadc.codecraft</groupId>
 			<artifactId>codecraft-base-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-util</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>com.mysql</groupId>

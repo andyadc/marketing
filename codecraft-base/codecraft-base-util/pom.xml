@@ -19,7 +19,11 @@
 	</properties>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>com.andyadc.codecraft</groupId>
+			<artifactId>codecraft-base-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 </project>
