@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.andyadc.marketing.infrastructure.persistence.award.mapper.RuleTreeNodeLineMapper">
+    <resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.award.po.RuleTreeNodeLine">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="tree_id" jdbcType="VARCHAR" property="treeId"/>
+        <result column="rule_node_from" jdbcType="VARCHAR" property="ruleNodeFrom"/>
+        <result column="rule_node_to" jdbcType="VARCHAR" property="ruleNodeTo"/>
+        <result column="rule_limit_type" jdbcType="VARCHAR" property="ruleLimitType"/>
+        <result column="rule_limit_value" jdbcType="VARCHAR" property="ruleLimitValue"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, tree_id, rule_node_from, rule_node_to, rule_limit_type, rule_limit_value, create_time,
+        update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from rule_tree_node_line
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from rule_tree_node_line
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" parameterType="RuleTreeNodeLine">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rule_tree_node_line (tree_id, rule_node_from, rule_node_to,
+        rule_limit_type, rule_limit_value, create_time,
+        update_time)
+        values (#{treeId,jdbcType=VARCHAR}, #{ruleNodeFrom,jdbcType=VARCHAR}, #{ruleNodeTo,jdbcType=VARCHAR},
+        #{ruleLimitType,jdbcType=VARCHAR}, #{ruleLimitValue,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+        #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="insertSelective" parameterType="RuleTreeNodeLine">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rule_tree_node_line
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="treeId != null">
+                tree_id,
+            </if>
+            <if test="ruleNodeFrom != null">
+                rule_node_from,
+            </if>
+            <if test="ruleNodeTo != null">
+                rule_node_to,
+            </if>
+            <if test="ruleLimitType != null">
+                rule_limit_type,
+            </if>
+            <if test="ruleLimitValue != null">
+                rule_limit_value,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="treeId != null">
+                #{treeId,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleNodeFrom != null">
+                #{ruleNodeFrom,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleNodeTo != null">
+                #{ruleNodeTo,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleLimitType != null">
+                #{ruleLimitType,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleLimitValue != null">
+                #{ruleLimitValue,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="RuleTreeNodeLine">
+        update rule_tree_node_line
+        <set>
+            <if test="treeId != null">
+                tree_id = #{treeId,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleNodeFrom != null">
+                rule_node_from = #{ruleNodeFrom,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleNodeTo != null">
+                rule_node_to = #{ruleNodeTo,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleLimitType != null">
+                rule_limit_type = #{ruleLimitType,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleLimitValue != null">
+                rule_limit_value = #{ruleLimitValue,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="RuleTreeNodeLine">
+        update rule_tree_node_line
+        set tree_id = #{treeId,jdbcType=VARCHAR},
+        rule_node_from = #{ruleNodeFrom,jdbcType=VARCHAR},
+        rule_node_to = #{ruleNodeTo,jdbcType=VARCHAR},
+        rule_limit_type = #{ruleLimitType,jdbcType=VARCHAR},
+        rule_limit_value = #{ruleLimitValue,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
