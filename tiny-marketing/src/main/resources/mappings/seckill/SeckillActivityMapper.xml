@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.andyadc.marketing.infrastructure.persistence.seckill.mapper.SeckillActivityMapper">
+
+	<resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.seckill.po.SeckillActivity">
+		<id column="id" jdbcType="BIGINT" property="id"/>
+		<result column="activity_name" jdbcType="VARCHAR" property="activityName"/>
+		<result column="status" jdbcType="INTEGER" property="status"/>
+		<result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+		<result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+		<result column="activity_desc" jdbcType="VARCHAR" property="activityDesc"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, activity_name, `status`, start_time, end_time, activity_desc
+	</sql>
+
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from seckill_activity
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from seckill_activity
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+
+	<insert id="insert" parameterType="SeckillActivity">
+		insert into seckill_activity (id, activity_name, `status`,
+		start_time, end_time, activity_desc
+		)
+		values (#{id,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{activityDesc,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<insert id="insertSelective" parameterType="SeckillActivity">
+		insert into seckill_activity
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="activityName != null">
+				activity_name,
+			</if>
+			<if test="status != null">
+				`status`,
+			</if>
+			<if test="startTime != null">
+				start_time,
+			</if>
+			<if test="endTime != null">
+				end_time,
+			</if>
+			<if test="activityDesc != null">
+				activity_desc,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="activityName != null">
+				#{activityName,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="startTime != null">
+				#{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endTime != null">
+				#{endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="activityDesc != null">
+				#{activityDesc,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="SeckillActivity">
+		update seckill_activity
+		<set>
+			<if test="activityName != null">
+				activity_name = #{activityName,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				`status` = #{status,jdbcType=INTEGER},
+			</if>
+			<if test="startTime != null">
+				start_time = #{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endTime != null">
+				end_time = #{endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="activityDesc != null">
+				activity_desc = #{activityDesc,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="SeckillActivity">
+		update seckill_activity
+		set activity_name = #{activityName,jdbcType=VARCHAR},
+		`status` = #{status,jdbcType=INTEGER},
+		start_time = #{startTime,jdbcType=TIMESTAMP},
+		end_time = #{endTime,jdbcType=TIMESTAMP},
+		activity_desc = #{activityDesc,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+</mapper>
