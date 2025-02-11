@@ -1,7 +1,7 @@
-package com.andyadc.marketing.config;
+package com.andyadc.marketing.infrastructure.config;
 
-import com.andyadc.dddframework.base.core.serializer.JodaDateTimeJsonDeserializer;
-import com.andyadc.dddframework.base.core.serializer.JodaDateTimeJsonSerializer;
+import com.andyadc.codecraft.base.core.serializer.JodaDateTimeJsonDeserializer;
+import com.andyadc.codecraft.base.core.serializer.JodaDateTimeJsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.joda.time.DateTime;
@@ -37,4 +37,5 @@ public class RedisConfig {
 
 		return redisTemplate;
 	}
+
 }

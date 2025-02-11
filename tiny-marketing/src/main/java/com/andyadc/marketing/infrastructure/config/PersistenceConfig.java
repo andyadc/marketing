@@ -1,4 +1,4 @@
-package com.andyadc.marketing.config;
+package com.andyadc.marketing.infrastructure.config;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
