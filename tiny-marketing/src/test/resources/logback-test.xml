@@ -7,7 +7,11 @@
 		</encoder>
 	</appender>
 
-	<root level="debug">
+	<logger name="com.andyadc.marketing.infrastructure.persistence.mapper" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<root level="info">
 		<appender-ref ref="STDOUT"/>
 	</root>
 
