@@ -1,6 +1,6 @@
 package com.andyadc.marketing.domain.activity.event;
 
-import com.andyadc.dddframework.base.messaging.event.BaseEvent;
+import com.andyadc.codecraft.base.messaging.event.BaseEvent;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
