@@ -10,8 +10,8 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,6 +21,7 @@ import java.util.TimeZone;
 public final class JsonUtils {
 
 	private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
+
 	private final static String DATE_PATTERN = "yyyy-MM-dd";
 	private final static String TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
 	private final static ObjectMapper DEFAULT_OBJECT_MAPPER = defaultObjectMapper();
