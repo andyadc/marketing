@@ -23,7 +23,7 @@ public class AwardMapperTest extends TestBase {
 	@Test
 	public void selectByAwardId() {
 		Award award = awardMapper.selectByAwardId(101);
-		System.out.println(award);
+		System.out.println(JsonUtils.toJson(award));
 	}
 
 	@Transactional

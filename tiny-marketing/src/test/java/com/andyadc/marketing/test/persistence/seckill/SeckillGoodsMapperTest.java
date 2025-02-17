@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(
 	webEnvironment = SpringBootTest.WebEnvironment.NONE
 )
-public class SeckillGoodsTest extends TestBase {
+public class SeckillGoodsMapperTest extends TestBase {
 
 	@Autowired
 	SeckillGoodsMapper seckillGoodsMapper;

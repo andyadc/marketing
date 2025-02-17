@@ -10,6 +10,12 @@
 	<logger name="com.andyadc.marketing.infrastructure.persistence.mapper" level="DEBUG" additivity="false">
 		<appender-ref ref="STDOUT"/>
 	</logger>
+	<logger name="com.zaxxer.hikari" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="org.mybatis" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
 
 	<root level="info">
 		<appender-ref ref="STDOUT"/>
