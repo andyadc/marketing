@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.config;
+package com.andyadc.marketing.infrastructure.config.persistence;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -18,25 +18,24 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(
-	basePackages = {"com.andyadc.marketing.infrastructure.persistence.seckill"},
-	sqlSessionFactoryRef = "secondarySqlSessionFactory"
+	basePackages = {"com.andyadc.marketing.infrastructure.persistence.marketing"},
+	sqlSessionFactoryRef = "primarySqlSessionFactory"
 )
 @EnableTransactionManagement(proxyTargetClass = true)
-public class SecondaryPersistenceConfig {
+public class PrimaryPersistenceConfig {
 
-	@Bean(name = "secondaryDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.secondary")
+	@Bean(name = "primaryDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.primary")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "secondarySqlSessionFactory")
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("secondaryDataSource") DataSource dataSource) throws Exception {
+	@Bean(name = "primarySqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("primaryDataSource") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
-
 		Resource[] mapperResources = new PathMatchingResourcePatternResolver()
-			.getResources("classpath:mappings/seckill/*Mapper.xml");
+			.getResources("classpath:mappings/marketing/*Mapper.xml");
 		sqlSessionFactoryBean.setMapperLocations(mapperResources);
 
 		Resource configResource = new PathMatchingResourcePatternResolver()
@@ -46,8 +45,8 @@ public class SecondaryPersistenceConfig {
 		return sqlSessionFactoryBean.getObject();
 	}
 
-	@Bean(name = "secondaryTransactionManager")
-	public TransactionManager transactionManager(@Qualifier("secondaryDataSource") DataSource dataSource) {
+	@Bean(name = "primaryTransactionManager")
+	public TransactionManager transactionManager(@Qualifier("primaryDataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 

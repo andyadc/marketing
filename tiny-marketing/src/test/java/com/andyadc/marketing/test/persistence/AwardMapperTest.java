@@ -1,8 +1,8 @@
 package com.andyadc.marketing.test.persistence;
 
 import com.andyadc.codecraft.base.util.JsonUtils;
-import com.andyadc.marketing.infrastructure.persistence.award.mapper.AwardMapper;
-import com.andyadc.marketing.infrastructure.persistence.award.po.Award;
+import com.andyadc.marketing.infrastructure.persistence.marketing.mapper.AwardMapper;
+import com.andyadc.marketing.infrastructure.persistence.marketing.po.Award;
 import com.andyadc.marketing.test.TestBase;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
