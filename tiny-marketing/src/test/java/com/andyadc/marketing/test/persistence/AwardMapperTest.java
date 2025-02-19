@@ -7,10 +7,10 @@ import com.andyadc.marketing.test.TestBase;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.ThreadLocalRandom;
 
 @SpringBootTest(
 	webEnvironment = SpringBootTest.WebEnvironment.NONE
@@ -26,15 +26,18 @@ public class AwardMapperTest extends TestBase {
 		System.out.println(JsonUtils.toJson(award));
 	}
 
-	@Transactional
 	@Test
-	@Rollback(true)
+//	@Rollback(false)
+	@Transactional(
+		transactionManager = "primaryTransactionManager",
+		rollbackFor = {Exception.class}
+	)
 	public void insertSelective() {
 		Award award = new Award();
-		award.setAwardId(6);
-		award.setAwardKey("Key-1");
-		award.setAwardConfig("Config-1");
-		award.setAwardDesc("Desc-1");
+		award.setAwardId(ThreadLocalRandom.current().nextInt());
+		award.setAwardKey("Key-" + award.getAwardId());
+		award.setAwardConfig("Config-" + award.getAwardId());
+		award.setAwardDesc("Desc-" + award.getAwardId());
 		award.setCreateTime(LocalDateTime.now());
 		award.setUpdateTime(LocalDateTime.now());
 		awardMapper.insertSelective(award);
