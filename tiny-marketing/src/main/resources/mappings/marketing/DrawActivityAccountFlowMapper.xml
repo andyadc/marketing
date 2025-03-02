@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.andyadc.marketing.infrastructure.persistence.marketing.mapper.RaffleActivityAccountFlowMapper">
+<mapper namespace="com.andyadc.marketing.infrastructure.persistence.marketing.mapper.DrawActivityAccountFlowMapper">
 	<resultMap id="BaseResultMap"
-			   type="com.andyadc.marketing.infrastructure.persistence.marketing.po.RaffleActivityAccountFlow">
+			   type="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivityAccountFlow">
 		<id column="id" jdbcType="BIGINT" property="id"/>
 		<result column="user_id" jdbcType="VARCHAR" property="userId"/>
 		<result column="activity_id" jdbcType="INTEGER" property="activityId"/>
@@ -24,40 +24,40 @@
 	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
 		select
         <include refid="Base_Column_List"/>
-        from raffle_activity_account_flow
-        where id = #{id,jdbcType=BIGINT}
-    </select>
+		from draw_activity_account_flow
+		where id = #{id,jdbcType=BIGINT}
+	</select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        delete from raffle_activity_account_flow
-        where id = #{id,jdbcType=BIGINT}
-    </delete>
+		delete from draw_activity_account_flow
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
 
-    <insert id="insert" parameterType="RaffleActivityAccountFlow">
-        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-            SELECT LAST_INSERT_ID()
-        </selectKey>
-        insert into raffle_activity_account_flow (user_id, activity_id, total_count,
-        day_count, month_count, flow_id,
-        flow_channel, biz_id, create_time,
-        update_time)
-        values (#{userId,jdbcType=VARCHAR}, #{activityId,jdbcType=INTEGER}, #{totalCount,jdbcType=INTEGER},
-        #{dayCount,jdbcType=INTEGER}, #{monthCount,jdbcType=INTEGER}, #{flowId,jdbcType=VARCHAR},
-        #{flowChannel,jdbcType=VARCHAR}, #{bizId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
-        #{updateTime,jdbcType=TIMESTAMP})
-    </insert>
+	<insert id="insert" parameterType="DrawActivityAccountFlow">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into draw_activity_account_flow (user_id, activity_id, total_count,
+		day_count, month_count, flow_id,
+		flow_channel, biz_id, create_time,
+		update_time)
+		values (#{userId,jdbcType=VARCHAR}, #{activityId,jdbcType=INTEGER}, #{totalCount,jdbcType=INTEGER},
+		#{dayCount,jdbcType=INTEGER}, #{monthCount,jdbcType=INTEGER}, #{flowId,jdbcType=VARCHAR},
+		#{flowChannel,jdbcType=VARCHAR}, #{bizId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP})
+	</insert>
 
-    <insert id="insertSelective" parameterType="RaffleActivityAccountFlow">
-        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-            SELECT LAST_INSERT_ID()
-        </selectKey>
-        insert into raffle_activity_account_flow
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="userId != null">
-                user_id,
-            </if>
-            <if test="activityId != null">
-                activity_id,
+	<insert id="insertSelective" parameterType="DrawActivityAccountFlow">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into draw_activity_account_flow
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="activityId != null">
+				activity_id,
             </if>
             <if test="totalCount != null">
                 total_count,
@@ -108,28 +108,28 @@
             </if>
             <if test="bizId != null">
                 #{bizId,jdbcType=VARCHAR},
-            </if>
-            <if test="createTime != null">
-                #{createTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updateTime != null">
-                #{updateTime,jdbcType=TIMESTAMP},
-            </if>
-        </trim>
-    </insert>
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="RaffleActivityAccountFlow">
-        update raffle_activity_account_flow
-        <set>
-            <if test="userId != null">
-                user_id = #{userId,jdbcType=VARCHAR},
-            </if>
-            <if test="activityId != null">
-                activity_id = #{activityId,jdbcType=INTEGER},
-            </if>
-            <if test="totalCount != null">
-                total_count = #{totalCount,jdbcType=INTEGER},
-            </if>
+	<update id="updateByPrimaryKeySelective" parameterType="DrawActivityAccountFlow">
+		update draw_activity_account_flow
+		<set>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=VARCHAR},
+			</if>
+			<if test="activityId != null">
+				activity_id = #{activityId,jdbcType=INTEGER},
+			</if>
+			<if test="totalCount != null">
+				total_count = #{totalCount,jdbcType=INTEGER},
+			</if>
             <if test="dayCount != null">
                 day_count = #{dayCount,jdbcType=INTEGER},
             </if>
@@ -145,28 +145,28 @@
             <if test="bizId != null">
                 biz_id = #{bizId,jdbcType=VARCHAR},
             </if>
-            <if test="createTime != null">
-                create_time = #{createTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime,jdbcType=TIMESTAMP},
-            </if>
-        </set>
-        where id = #{id,jdbcType=BIGINT}
-    </update>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
 
-    <update id="updateByPrimaryKey" parameterType="RaffleActivityAccountFlow">
-        update raffle_activity_account_flow
-        set user_id = #{userId,jdbcType=VARCHAR},
-        activity_id = #{activityId,jdbcType=INTEGER},
-        total_count = #{totalCount,jdbcType=INTEGER},
-        day_count = #{dayCount,jdbcType=INTEGER},
-        month_count = #{monthCount,jdbcType=INTEGER},
-        flow_id = #{flowId,jdbcType=VARCHAR},
-        flow_channel = #{flowChannel,jdbcType=VARCHAR},
-        biz_id = #{bizId,jdbcType=VARCHAR},
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-        update_time = #{updateTime,jdbcType=TIMESTAMP}
+	<update id="updateByPrimaryKey" parameterType="DrawActivityAccountFlow">
+		update draw_activity_account_flow
+		set user_id = #{userId,jdbcType=VARCHAR},
+		activity_id = #{activityId,jdbcType=INTEGER},
+		total_count = #{totalCount,jdbcType=INTEGER},
+		day_count = #{dayCount,jdbcType=INTEGER},
+		month_count = #{monthCount,jdbcType=INTEGER},
+		flow_id = #{flowId,jdbcType=VARCHAR},
+		flow_channel = #{flowChannel,jdbcType=VARCHAR},
+		biz_id = #{bizId,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=BIGINT}
     </update>
 </mapper>

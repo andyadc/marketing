@@ -6,17 +6,17 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class RaffleActivity implements Serializable {
+public class DrawActivity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 自增ID
-     */
-    private Long id;
-    /**
-     * 活动ID
-     */
+	/**
+	 * 自增ID
+	 */
+	private Long id;
+	/**
+	 * 活动ID
+	 */
     private Integer activityId;
     /**
      * 活动名称

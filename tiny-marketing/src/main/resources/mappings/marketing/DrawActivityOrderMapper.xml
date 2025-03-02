@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.andyadc.marketing.infrastructure.persistence.marketing.mapper.RaffleActivityOrderMapper">
+<mapper namespace="com.andyadc.marketing.infrastructure.persistence.marketing.mapper.DrawActivityOrderMapper">
 	<resultMap id="BaseResultMap"
-			   type="com.andyadc.marketing.infrastructure.persistence.marketing.po.RaffleActivityOrder">
+			   type="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivityOrder">
 		<id column="id" jdbcType="BIGINT" property="id"/>
 		<result column="user_id" jdbcType="VARCHAR" property="userId"/>
 		<result column="activity_id" jdbcType="INTEGER" property="activityId"/>
@@ -23,40 +23,40 @@
 	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List"/>
-    from raffle_activity_order
-    where id = #{id,jdbcType=BIGINT}
-  </select>
+		from draw_activity_order
+		where id = #{id,jdbcType=BIGINT}
+	</select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from raffle_activity_order
-    where id = #{id,jdbcType=BIGINT}
+	  delete from draw_activity_order
+	  where id = #{id,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" parameterType="RaffleActivityOrder">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into raffle_activity_order (user_id, activity_id, activity_name,
-    strategy_id, order_id, order_time,
-    `state`, create_time, update_time
-    )
-    values (#{userId,jdbcType=VARCHAR}, #{activityId,jdbcType=INTEGER}, #{activityName,jdbcType=VARCHAR},
-    #{strategyId,jdbcType=INTEGER}, #{orderId,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP},
-    #{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-    )
-  </insert>
+	<insert id="insert" parameterType="DrawActivityOrder">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into draw_activity_order (user_id, activity_id, activity_name,
+		strategy_id, order_id, order_time,
+		`state`, create_time, update_time
+		)
+		values (#{userId,jdbcType=VARCHAR}, #{activityId,jdbcType=INTEGER}, #{activityName,jdbcType=VARCHAR},
+		#{strategyId,jdbcType=INTEGER}, #{orderId,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP},
+		#{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
 
-  <insert id="insertSelective" parameterType="RaffleActivityOrder">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into raffle_activity_order
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="activityId != null">
-        activity_id,
+	<insert id="insertSelective" parameterType="DrawActivityOrder">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into draw_activity_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="activityId != null">
+				activity_id,
       </if>
       <if test="activityName != null">
         activity_name,
@@ -101,28 +101,28 @@
       </if>
       <if test="state != null">
         #{state,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
+	  </if>
+		<if test="createTime != null">
+			#{createTime,jdbcType=TIMESTAMP},
+		</if>
+		<if test="updateTime != null">
+			#{updateTime,jdbcType=TIMESTAMP},
+		</if>
+	</trim>
+	</insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="RaffleActivityOrder">
-    update raffle_activity_order
-    <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="activityId != null">
-        activity_id = #{activityId,jdbcType=INTEGER},
-      </if>
-      <if test="activityName != null">
-        activity_name = #{activityName,jdbcType=VARCHAR},
-      </if>
+	<update id="updateByPrimaryKeySelective" parameterType="DrawActivityOrder">
+		update draw_activity_order
+		<set>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=VARCHAR},
+			</if>
+			<if test="activityId != null">
+				activity_id = #{activityId,jdbcType=INTEGER},
+			</if>
+			<if test="activityName != null">
+				activity_name = #{activityName,jdbcType=VARCHAR},
+			</if>
       <if test="strategyId != null">
         strategy_id = #{strategyId,jdbcType=INTEGER},
       </if>
@@ -135,27 +135,27 @@
       <if test="state != null">
         `state` = #{state,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
 
-  <update id="updateByPrimaryKey" parameterType="RaffleActivityOrder">
-    update raffle_activity_order
-    set user_id = #{userId,jdbcType=VARCHAR},
-    activity_id = #{activityId,jdbcType=INTEGER},
-    activity_name = #{activityName,jdbcType=VARCHAR},
-    strategy_id = #{strategyId,jdbcType=INTEGER},
-    order_id = #{orderId,jdbcType=VARCHAR},
-    order_time = #{orderTime,jdbcType=TIMESTAMP},
-    `state` = #{state,jdbcType=VARCHAR},
-    create_time = #{createTime,jdbcType=TIMESTAMP},
-    update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
+	<update id="updateByPrimaryKey" parameterType="DrawActivityOrder">
+		update draw_activity_order
+		set user_id = #{userId,jdbcType=VARCHAR},
+		activity_id = #{activityId,jdbcType=INTEGER},
+		activity_name = #{activityName,jdbcType=VARCHAR},
+		strategy_id = #{strategyId,jdbcType=INTEGER},
+		order_id = #{orderId,jdbcType=VARCHAR},
+		order_time = #{orderTime,jdbcType=TIMESTAMP},
+		`state` = #{state,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

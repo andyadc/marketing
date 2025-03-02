@@ -6,18 +6,22 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class RaffleActivityCount implements Serializable {
+public class DrawActivityAccountFlow implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
+	/**
+	 * 自增ID
+	 */
+	private Long id;
+	/**
+	 * 用户ID
+	 */
+    private String userId;
     /**
-     * 自增ID
+     * 活动ID
      */
-    private Long id;
-    /**
-     * 活动次数编号
-     */
-    private Integer activityCountId;
+    private Integer activityId;
     /**
      * 总次数
      */
@@ -30,6 +34,18 @@ public class RaffleActivityCount implements Serializable {
      * 月次数
      */
     private Integer monthCount;
+    /**
+     * 流水ID - 生成的唯一ID
+     */
+    private String flowId;
+    /**
+     * 流水渠道（activity-活动领取、sale-购买、redeem-兑换、free-免费赠送）
+     */
+    private String flowChannel;
+    /**
+     * 业务ID（外部透传，活动ID、订单ID）
+     */
+    private String bizId;
     /**
      * 创建时间
      */
@@ -48,12 +64,20 @@ public class RaffleActivityCount implements Serializable {
         this.id = id;
     }
 
-    public Integer getActivityCountId() {
-        return activityCountId;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setActivityCountId(Integer activityCountId) {
-        this.activityCountId = activityCountId;
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public Integer getActivityId() {
+        return activityId;
+    }
+
+    public void setActivityId(Integer activityId) {
+        this.activityId = activityId;
     }
 
     public Integer getTotalCount() {
@@ -78,6 +102,30 @@ public class RaffleActivityCount implements Serializable {
 
     public void setMonthCount(Integer monthCount) {
         this.monthCount = monthCount;
+    }
+
+    public String getFlowId() {
+        return flowId;
+    }
+
+    public void setFlowId(String flowId) {
+        this.flowId = flowId == null ? null : flowId.trim();
+    }
+
+    public String getFlowChannel() {
+        return flowChannel;
+    }
+
+    public void setFlowChannel(String flowChannel) {
+        this.flowChannel = flowChannel == null ? null : flowChannel.trim();
+    }
+
+    public String getBizId() {
+        return bizId;
+    }
+
+    public void setBizId(String bizId) {
+        this.bizId = bizId == null ? null : bizId.trim();
     }
 
     public LocalDateTime getCreateTime() {
