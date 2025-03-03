@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.andyadc.marketing.infrastructure.persistence.group.mapper.GroupBuyingActivityMapper">
+	<resultMap id="BaseResultMap" type="com.andyadc.marketing.infrastructure.persistence.group.po.GroupBuyingActivity">
+		<id column="id" jdbcType="BIGINT" property="id"/>
+		<result column="activity_id" jdbcType="BIGINT" property="activityId"/>
+		<result column="activity_name" jdbcType="VARCHAR" property="activityName"/>
+		<result column="discount_id" jdbcType="VARCHAR" property="discountId"/>
+		<result column="group_type" jdbcType="TINYINT" property="groupType"/>
+		<result column="take_limit_count" jdbcType="INTEGER" property="takeLimitCount"/>
+		<result column="target" jdbcType="INTEGER" property="target"/>
+		<result column="valid_time" jdbcType="INTEGER" property="validTime"/>
+		<result column="status" jdbcType="TINYINT" property="status"/>
+		<result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+		<result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+		<result column="tag_id" jdbcType="VARCHAR" property="tagId"/>
+		<result column="tag_scope" jdbcType="VARCHAR" property="tagScope"/>
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, activity_id, activity_name, discount_id, group_type, take_limit_count, target,
+		valid_time, `status`, start_time, end_time, tag_id, tag_scope, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from group_buying_activity
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from group_buying_activity
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.andyadc.marketing.infrastructure.persistence.group.po.GroupBuyingActivity">
+		insert into group_buying_activity (id, activity_id, activity_name,
+		discount_id, group_type, take_limit_count,
+		target, valid_time, `status`,
+		start_time, end_time, tag_id,
+		tag_scope, create_time, update_time
+		)
+		values (#{id,jdbcType=BIGINT}, #{activityId,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR},
+		#{discountId,jdbcType=VARCHAR}, #{groupType,jdbcType=TINYINT}, #{takeLimitCount,jdbcType=INTEGER},
+		#{target,jdbcType=INTEGER}, #{validTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT},
+		#{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{tagId,jdbcType=VARCHAR},
+		#{tagScope,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<insert id="insertSelective"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.group.po.GroupBuyingActivity">
+		insert into group_buying_activity
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="activityId != null">
+				activity_id,
+			</if>
+			<if test="activityName != null">
+				activity_name,
+			</if>
+			<if test="discountId != null">
+				discount_id,
+			</if>
+			<if test="groupType != null">
+				group_type,
+			</if>
+			<if test="takeLimitCount != null">
+				take_limit_count,
+			</if>
+			<if test="target != null">
+				target,
+			</if>
+			<if test="validTime != null">
+				valid_time,
+			</if>
+			<if test="status != null">
+				`status`,
+			</if>
+			<if test="startTime != null">
+				start_time,
+			</if>
+			<if test="endTime != null">
+				end_time,
+			</if>
+			<if test="tagId != null">
+				tag_id,
+			</if>
+			<if test="tagScope != null">
+				tag_scope,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="activityId != null">
+				#{activityId,jdbcType=BIGINT},
+			</if>
+			<if test="activityName != null">
+				#{activityName,jdbcType=VARCHAR},
+			</if>
+			<if test="discountId != null">
+				#{discountId,jdbcType=VARCHAR},
+			</if>
+			<if test="groupType != null">
+				#{groupType,jdbcType=TINYINT},
+			</if>
+			<if test="takeLimitCount != null">
+				#{takeLimitCount,jdbcType=INTEGER},
+			</if>
+			<if test="target != null">
+				#{target,jdbcType=INTEGER},
+			</if>
+			<if test="validTime != null">
+				#{validTime,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="startTime != null">
+				#{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endTime != null">
+				#{endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="tagId != null">
+				#{tagId,jdbcType=VARCHAR},
+			</if>
+			<if test="tagScope != null">
+				#{tagScope,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.group.po.GroupBuyingActivity">
+		update group_buying_activity
+		<set>
+			<if test="activityId != null">
+				activity_id = #{activityId,jdbcType=BIGINT},
+			</if>
+			<if test="activityName != null">
+				activity_name = #{activityName,jdbcType=VARCHAR},
+			</if>
+			<if test="discountId != null">
+				discount_id = #{discountId,jdbcType=VARCHAR},
+			</if>
+			<if test="groupType != null">
+				group_type = #{groupType,jdbcType=TINYINT},
+			</if>
+			<if test="takeLimitCount != null">
+				take_limit_count = #{takeLimitCount,jdbcType=INTEGER},
+			</if>
+			<if test="target != null">
+				target = #{target,jdbcType=INTEGER},
+			</if>
+			<if test="validTime != null">
+				valid_time = #{validTime,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+				`status` = #{status,jdbcType=TINYINT},
+			</if>
+			<if test="startTime != null">
+				start_time = #{startTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endTime != null">
+				end_time = #{endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="tagId != null">
+				tag_id = #{tagId,jdbcType=VARCHAR},
+			</if>
+			<if test="tagScope != null">
+				tag_scope = #{tagScope,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.group.po.GroupBuyingActivity">
+		update group_buying_activity
+		set activity_id = #{activityId,jdbcType=BIGINT},
+		activity_name = #{activityName,jdbcType=VARCHAR},
+		discount_id = #{discountId,jdbcType=VARCHAR},
+		group_type = #{groupType,jdbcType=TINYINT},
+		take_limit_count = #{takeLimitCount,jdbcType=INTEGER},
+		target = #{target,jdbcType=INTEGER},
+		valid_time = #{validTime,jdbcType=INTEGER},
+		`status` = #{status,jdbcType=TINYINT},
+		start_time = #{startTime,jdbcType=TIMESTAMP},
+		end_time = #{endTime,jdbcType=TIMESTAMP},
+		tag_id = #{tagId,jdbcType=VARCHAR},
+		tag_scope = #{tagScope,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+</mapper>
