@@ -19,19 +19,19 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(
 	basePackages = {"com.andyadc.marketing.infrastructure.persistence.seckill"},
-	sqlSessionFactoryRef = "secondarySqlSessionFactory"
+	sqlSessionFactoryRef = "seckillSqlSessionFactory"
 )
 @EnableTransactionManagement(proxyTargetClass = true)
-public class SecondaryPersistenceConfig {
+public class SeckillPersistenceConfig {
 
-	@Bean(name = "secondaryDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.secondary")
+	@Bean(name = "seckillDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.seckill")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "secondarySqlSessionFactory")
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("secondaryDataSource") DataSource dataSource) throws Exception {
+	@Bean(name = "seckillSqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("seckillDataSource") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
 
@@ -46,8 +46,8 @@ public class SecondaryPersistenceConfig {
 		return sqlSessionFactoryBean.getObject();
 	}
 
-	@Bean(name = "secondaryTransactionManager")
-	public TransactionManager transactionManager(@Qualifier("secondaryDataSource") DataSource dataSource) {
+	@Bean(name = "seckillTransactionManager")
+	public TransactionManager transactionManager(@Qualifier("seckillDataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 

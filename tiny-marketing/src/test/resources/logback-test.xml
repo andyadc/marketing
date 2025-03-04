@@ -7,7 +7,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.andyadc.marketing.infrastructure.persistence.mapper" level="DEBUG" additivity="false">
+	<logger name="com.andyadc.marketing.infrastructure.persistence" level="DEBUG" additivity="false">
 		<appender-ref ref="STDOUT"/>
 	</logger>
 	<logger name="com.zaxxer.hikari" level="DEBUG" additivity="false">

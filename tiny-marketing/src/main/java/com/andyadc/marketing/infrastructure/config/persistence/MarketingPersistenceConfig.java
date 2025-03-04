@@ -19,19 +19,19 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(
 	basePackages = {"com.andyadc.marketing.infrastructure.persistence.marketing"},
-	sqlSessionFactoryRef = "primarySqlSessionFactory"
+	sqlSessionFactoryRef = "marketingSqlSessionFactory"
 )
 @EnableTransactionManagement(proxyTargetClass = true)
-public class PrimaryPersistenceConfig {
+public class MarketingPersistenceConfig {
 
-	@Bean(name = "primaryDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.primary")
+	@Bean(name = "marketingDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.marketing")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "primarySqlSessionFactory")
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("primaryDataSource") DataSource dataSource) throws Exception {
+	@Bean(name = "marketingSqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("marketingDataSource") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
 		Resource[] mapperResources = new PathMatchingResourcePatternResolver()
@@ -45,8 +45,8 @@ public class PrimaryPersistenceConfig {
 		return sqlSessionFactoryBean.getObject();
 	}
 
-	@Bean(name = "primaryTransactionManager")
-	public TransactionManager transactionManager(@Qualifier("primaryDataSource") DataSource dataSource) {
+	@Bean(name = "marketingTransactionManager")
+	public TransactionManager transactionManager(@Qualifier("marketingDataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 
