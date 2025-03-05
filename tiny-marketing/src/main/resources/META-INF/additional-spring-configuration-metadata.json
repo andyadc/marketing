@@ -1,0 +1,19 @@
+{
+	"properties": [
+		{
+			"name": "spring.datasource.marketing.driver-class-name",
+			"type": "java.lang.String",
+			"description": "Description for spring.datasource.marketing.driver-class-name."
+		},
+		{
+			"name": "spring.datasource.marketing.username",
+			"type": "java.lang.String",
+			"description": "Description for spring.datasource.marketing.username."
+		},
+		{
+			"name": "spring.datasource.marketing.pool-name",
+			"type": "java.lang.String",
+			"description": "Description for spring.datasource.marketing.pool-name."
+		}
+	]
+}
