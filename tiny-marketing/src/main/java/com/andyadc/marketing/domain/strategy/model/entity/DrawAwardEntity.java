@@ -3,7 +3,7 @@ package com.andyadc.marketing.domain.strategy.model.entity;
 /**
  * 抽奖奖品实体
  */
-public class RaffleAwardEntity {
+public class DrawAwardEntity {
 
 	/**
 	 * 奖品ID
@@ -56,7 +56,7 @@ public class RaffleAwardEntity {
 
 	@Override
 	public String toString() {
-		return "RaffleAwardEntity{" +
+		return "DrawAwardEntity{" +
 			"awardId=" + awardId +
 			", awardTitle=" + awardTitle +
 			", awardConfig=" + awardConfig +

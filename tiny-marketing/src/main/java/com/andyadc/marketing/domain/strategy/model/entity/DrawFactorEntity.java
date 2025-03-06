@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 /**
  * 抽奖因子实体
  */
-public class RaffleFactorEntity {
+public class DrawFactorEntity {
 
 	/**
 	 * 用户ID
@@ -46,7 +46,7 @@ public class RaffleFactorEntity {
 
 	@Override
 	public String toString() {
-		return "RaffleFactorEntity{" +
+		return "DrawAwardEntity{" +
 			"userId=" + userId +
 			", strategyId=" + strategyId +
 			", endDateTime=" + endDateTime +

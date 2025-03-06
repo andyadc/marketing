@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 /**
- * 策略装配库(兵工厂)，负责初始化策略计算
+ * 策略装配库，负责初始化策略计算
  */
 @Service
-public class StrategyArmoryDispatch implements StrategyDispatch, StrategyArmory {
+public class StrategyAssembleDispatch implements StrategyDispatch, StrategyAssemble {
 
 	@Override
 	public boolean assembleLotteryStrategy(Integer strategyId) {

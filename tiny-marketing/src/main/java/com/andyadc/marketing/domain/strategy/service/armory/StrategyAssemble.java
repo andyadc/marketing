@@ -1,9 +1,9 @@
 package com.andyadc.marketing.domain.strategy.service.armory;
 
 /**
- * 策略装配库(兵工厂)，负责初始化策略计算
+ * 策略装配库，负责初始化策略计算
  */
-public interface StrategyArmory {
+public interface StrategyAssemble {
 
 	/**
 	 * 装配抽奖策略配置「触发的时机可以为活动审核通过后进行调用」
