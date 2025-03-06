@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 抽奖策略抽象类，定义抽奖的标准流程
  */
-public abstract class AbstractRaffleStrategy implements RaffleStrategy {
+public abstract class AbstractDrawStrategy implements DrawStrategy {
 
-	private static final Logger logger = LoggerFactory.getLogger(AbstractRaffleStrategy.class);
+	private static final Logger logger = LoggerFactory.getLogger(AbstractDrawStrategy.class);
 
 }
