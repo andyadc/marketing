@@ -6,11 +6,8 @@
 		<result column="activity_id" jdbcType="INTEGER" property="activityId"/>
 		<result column="activity_name" jdbcType="VARCHAR" property="activityName"/>
 		<result column="activity_desc" jdbcType="VARCHAR" property="activityDesc"/>
-		<result column="begin_time" jdbcType="TIMESTAMP" property="beginTime"/>
-		<result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
-		<result column="stock_count" jdbcType="INTEGER" property="stockCount"/>
-		<result column="stock_count_surplus" jdbcType="INTEGER" property="stockCountSurplus"/>
-		<result column="activity_count_id" jdbcType="INTEGER" property="activityCountId"/>
+		<result column="begin_datetime" jdbcType="TIMESTAMP" property="beginDatetime"/>
+		<result column="end_datetime" jdbcType="TIMESTAMP" property="endDatetime"/>
 		<result column="strategy_id" jdbcType="INTEGER" property="strategyId"/>
 		<result column="state" jdbcType="VARCHAR" property="state"/>
 		<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
@@ -18,111 +15,92 @@
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		id, activity_id, activity_name, activity_desc, begin_time, end_time, stock_count,
-		stock_count_surplus, activity_count_id, strategy_id, `state`, create_time, update_time
+		id, activity_id, activity_name, activity_desc, begin_datetime, end_datetime, strategy_id,
+		`state`, create_time, update_time
 	</sql>
 
 	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
+		select
+		<include refid="Base_Column_List"/>
 		from draw_activity
 		where id = #{id,jdbcType=BIGINT}
 	</select>
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
 		delete from draw_activity
 		where id = #{id,jdbcType=BIGINT}
 	</delete>
 
-	<insert id="insert" parameterType="DrawActivity">
-		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-			SELECT LAST_INSERT_ID()
-		</selectKey>
-		insert into draw_activity (activity_id, activity_name, activity_desc,
-		begin_time, end_time, stock_count,
-		stock_count_surplus, activity_count_id, strategy_id,
-		`state`, create_time, update_time
-		)
-		values (#{activityId,jdbcType=INTEGER}, #{activityName,jdbcType=VARCHAR}, #{activityDesc,jdbcType=VARCHAR},
-		#{beginTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{stockCount,jdbcType=INTEGER},
-		#{stockCountSurplus,jdbcType=INTEGER}, #{activityCountId,jdbcType=INTEGER}, #{strategyId,jdbcType=INTEGER},
-		#{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-		)
+	<insert id="insert" parameterType="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivity">
+		insert into draw_activity (id, activity_id, activity_name,
+		activity_desc, begin_datetime, end_datetime,
+		strategy_id, `state`, create_time,
+		update_time)
+		values (#{id,jdbcType=BIGINT}, #{activityId,jdbcType=INTEGER}, #{activityName,jdbcType=VARCHAR},
+		#{activityDesc,jdbcType=VARCHAR}, #{beginDatetime,jdbcType=TIMESTAMP}, #{endDatetime,jdbcType=TIMESTAMP},
+		#{strategyId,jdbcType=INTEGER}, #{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP})
 	</insert>
 
-	<insert id="insertSelective" parameterType="DrawActivity">
-		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-			SELECT LAST_INSERT_ID()
-		</selectKey>
+	<insert id="insertSelective"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivity">
 		insert into draw_activity
 		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
 			<if test="activityId != null">
 				activity_id,
 			</if>
 			<if test="activityName != null">
 				activity_name,
-            </if>
-            <if test="activityDesc != null">
-                activity_desc,
-            </if>
-            <if test="beginTime != null">
-                begin_time,
-            </if>
-            <if test="endTime != null">
-                end_time,
-            </if>
-            <if test="stockCount != null">
-                stock_count,
-            </if>
-            <if test="stockCountSurplus != null">
-                stock_count_surplus,
-            </if>
-            <if test="activityCountId != null">
-                activity_count_id,
-            </if>
-            <if test="strategyId != null">
-                strategy_id,
-            </if>
-            <if test="state != null">
-                `state`,
-            </if>
-            <if test="createTime != null">
-                create_time,
-            </if>
-            <if test="updateTime != null">
-                update_time,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="activityId != null">
-                #{activityId,jdbcType=INTEGER},
-            </if>
-            <if test="activityName != null">
-                #{activityName,jdbcType=VARCHAR},
-            </if>
-            <if test="activityDesc != null">
-                #{activityDesc,jdbcType=VARCHAR},
-            </if>
-            <if test="beginTime != null">
-                #{beginTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="endTime != null">
-                #{endTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="stockCount != null">
-                #{stockCount,jdbcType=INTEGER},
-            </if>
-            <if test="stockCountSurplus != null">
-                #{stockCountSurplus,jdbcType=INTEGER},
-            </if>
-            <if test="activityCountId != null">
-                #{activityCountId,jdbcType=INTEGER},
-            </if>
-            <if test="strategyId != null">
-                #{strategyId,jdbcType=INTEGER},
-            </if>
-            <if test="state != null">
-                #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="activityDesc != null">
+				activity_desc,
+			</if>
+			<if test="beginDatetime != null">
+				begin_datetime,
+			</if>
+			<if test="endDatetime != null">
+				end_datetime,
+			</if>
+			<if test="strategyId != null">
+				strategy_id,
+			</if>
+			<if test="state != null">
+				`state`,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="activityId != null">
+				#{activityId,jdbcType=INTEGER},
+			</if>
+			<if test="activityName != null">
+				#{activityName,jdbcType=VARCHAR},
+			</if>
+			<if test="activityDesc != null">
+				#{activityDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="beginDatetime != null">
+				#{beginDatetime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endDatetime != null">
+				#{endDatetime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="strategyId != null">
+				#{strategyId,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				#{state,jdbcType=VARCHAR},
 			</if>
 			<if test="createTime != null">
 				#{createTime,jdbcType=TIMESTAMP},
@@ -133,7 +111,8 @@
 		</trim>
 	</insert>
 
-	<update id="updateByPrimaryKeySelective" parameterType="DrawActivity">
+	<update id="updateByPrimaryKeySelective"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivity">
 		update draw_activity
 		<set>
 			<if test="activityId != null">
@@ -145,27 +124,18 @@
 			<if test="activityDesc != null">
 				activity_desc = #{activityDesc,jdbcType=VARCHAR},
 			</if>
-            <if test="beginTime != null">
-                begin_time = #{beginTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="endTime != null">
-                end_time = #{endTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="stockCount != null">
-                stock_count = #{stockCount,jdbcType=INTEGER},
-            </if>
-            <if test="stockCountSurplus != null">
-                stock_count_surplus = #{stockCountSurplus,jdbcType=INTEGER},
-            </if>
-            <if test="activityCountId != null">
-                activity_count_id = #{activityCountId,jdbcType=INTEGER},
-            </if>
-            <if test="strategyId != null">
-                strategy_id = #{strategyId,jdbcType=INTEGER},
-            </if>
-            <if test="state != null">
-                `state` = #{state,jdbcType=VARCHAR},
-            </if>
+			<if test="beginDatetime != null">
+				begin_datetime = #{beginDatetime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endDatetime != null">
+				end_datetime = #{endDatetime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="strategyId != null">
+				strategy_id = #{strategyId,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				`state` = #{state,jdbcType=VARCHAR},
+			</if>
 			<if test="createTime != null">
 				create_time = #{createTime,jdbcType=TIMESTAMP},
 			</if>
@@ -176,20 +146,19 @@
 		where id = #{id,jdbcType=BIGINT}
 	</update>
 
-	<update id="updateByPrimaryKey" parameterType="DrawActivity">
+	<update id="updateByPrimaryKey"
+			parameterType="com.andyadc.marketing.infrastructure.persistence.marketing.po.DrawActivity">
 		update draw_activity
 		set activity_id = #{activityId,jdbcType=INTEGER},
 		activity_name = #{activityName,jdbcType=VARCHAR},
 		activity_desc = #{activityDesc,jdbcType=VARCHAR},
-		begin_time = #{beginTime,jdbcType=TIMESTAMP},
-		end_time = #{endTime,jdbcType=TIMESTAMP},
-		stock_count = #{stockCount,jdbcType=INTEGER},
-		stock_count_surplus = #{stockCountSurplus,jdbcType=INTEGER},
-		activity_count_id = #{activityCountId,jdbcType=INTEGER},
+		begin_datetime = #{beginDatetime,jdbcType=TIMESTAMP},
+		end_datetime = #{endDatetime,jdbcType=TIMESTAMP},
 		strategy_id = #{strategyId,jdbcType=INTEGER},
 		`state` = #{state,jdbcType=VARCHAR},
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-        update_time = #{updateTime,jdbcType=TIMESTAMP}
-        where id = #{id,jdbcType=BIGINT}
-    </update>
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
 </mapper>

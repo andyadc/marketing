@@ -1,76 +1,65 @@
 package com.andyadc.marketing.infrastructure.persistence.marketing.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity
-public class DrawActivity implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-
+public class DrawActivity {
 	/**
 	 * 自增ID
 	 */
 	private Long id;
+
 	/**
 	 * 活动ID
 	 */
-    private Integer activityId;
-    /**
-     * 活动名称
-     */
-    private String activityName;
-    /**
-     * 活动描述
-     */
-    private String activityDesc;
-    /**
-     * 开始时间
-     */
-    private LocalDateTime beginTime;
-    /**
-     * 结束时间
-     */
-    private LocalDateTime endTime;
-    /**
-     * 库存总量
-     */
-    private Integer stockCount;
-    /**
-     * 剩余库存
-     */
-    private Integer stockCountSurplus;
-    /**
-     * 活动参与次数配置
-     */
-    private Integer activityCountId;
-    /**
-     * 抽奖策略ID
-     */
-    private Integer strategyId;
-    /**
-     * 活动状态
-     */
-    private String state;
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
+	private Integer activityId;
 
-    @Id
-    public Long getId() {
-        return id;
-    }
+	/**
+	 * 活动名称
+	 */
+	private String activityName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	/**
+	 * 活动描述
+	 */
+	private String activityDesc;
+
+	/**
+	 * 开始时间
+	 */
+	private LocalDateTime beginDatetime;
+
+	/**
+	 * 结束时间
+	 */
+	private LocalDateTime endDatetime;
+
+	/**
+	 * 抽奖策略ID
+	 */
+	private Integer strategyId;
+
+	/**
+	 * 活动状态
+	 */
+	private String state;
+
+	/**
+	 * 创建时间
+	 */
+	private LocalDateTime createTime;
+
+	/**
+	 * 更新时间
+	 */
+	private LocalDateTime updateTime;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
     public Integer getActivityId() {
         return activityId;
@@ -85,59 +74,35 @@ public class DrawActivity implements Serializable {
     }
 
     public void setActivityName(String activityName) {
-        this.activityName = activityName == null ? null : activityName.trim();
-    }
+		this.activityName = activityName == null ? null : activityName.trim();
+	}
 
-    public String getActivityDesc() {
-        return activityDesc;
-    }
+	public String getActivityDesc() {
+		return activityDesc;
+	}
 
-    public void setActivityDesc(String activityDesc) {
-        this.activityDesc = activityDesc == null ? null : activityDesc.trim();
-    }
+	public void setActivityDesc(String activityDesc) {
+		this.activityDesc = activityDesc == null ? null : activityDesc.trim();
+	}
 
-    public LocalDateTime getBeginTime() {
-        return beginTime;
-    }
+	public LocalDateTime getBeginDatetime() {
+		return beginDatetime;
+	}
 
-    public void setBeginTime(LocalDateTime beginTime) {
-        this.beginTime = beginTime;
-    }
+	public void setBeginDatetime(LocalDateTime beginDatetime) {
+		this.beginDatetime = beginDatetime;
+	}
 
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
+	public LocalDateTime getEndDatetime() {
+		return endDatetime;
+	}
 
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
+	public void setEndDatetime(LocalDateTime endDatetime) {
+		this.endDatetime = endDatetime;
+	}
 
-    public Integer getStockCount() {
-        return stockCount;
-    }
-
-    public void setStockCount(Integer stockCount) {
-        this.stockCount = stockCount;
-    }
-
-    public Integer getStockCountSurplus() {
-        return stockCountSurplus;
-    }
-
-    public void setStockCountSurplus(Integer stockCountSurplus) {
-        this.stockCountSurplus = stockCountSurplus;
-    }
-
-    public Integer getActivityCountId() {
-        return activityCountId;
-    }
-
-    public void setActivityCountId(Integer activityCountId) {
-        this.activityCountId = activityCountId;
-    }
-
-    public Integer getStrategyId() {
-        return strategyId;
+	public Integer getStrategyId() {
+		return strategyId;
     }
 
     public void setStrategyId(Integer strategyId) {
