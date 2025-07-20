@@ -1,9 +1,11 @@
 package com.andyadc.codecraft.base.core.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Response<T> implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 3474561067666446797L;
 
 	private String code;
