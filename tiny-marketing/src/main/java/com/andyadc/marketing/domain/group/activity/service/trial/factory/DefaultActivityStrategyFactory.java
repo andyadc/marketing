@@ -1,7 +1,7 @@
 package com.andyadc.marketing.domain.group.activity.service.trial.factory;
 
 import com.andyadc.marketing.domain.group.activity.model.entity.MarketProductEntity;
-import com.andyadc.marketing.domain.group.activity.model.entity.TrialBalanceEntity;
+import com.andyadc.marketing.domain.group.activity.model.entity.TrialCalculationEntity;
 import com.andyadc.marketing.domain.group.activity.model.valobj.GroupBuyingActivityDiscountVO;
 import com.andyadc.marketing.domain.group.activity.model.valobj.SkuVO;
 import com.andyadc.marketing.domain.group.activity.service.trial.node.RootNode;
@@ -22,7 +22,7 @@ public class DefaultActivityStrategyFactory {
 		this.rootNode = rootNode;
 	}
 
-	public StrategyHandler<MarketProductEntity, DynamicContext, TrialBalanceEntity> strategyHandler() {
+	public StrategyHandler<MarketProductEntity, DynamicContext, TrialCalculationEntity> strategyHandler() {
 		return rootNode;
 	}
 
