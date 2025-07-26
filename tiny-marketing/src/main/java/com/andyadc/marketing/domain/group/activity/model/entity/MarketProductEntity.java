@@ -1,5 +1,13 @@
 package com.andyadc.marketing.domain.group.activity.model.entity;
 
+import lombok.Builder;
+import lombok.Data;
+
+/**
+ * 营销商品实体信息
+ */
+@Data
+@Builder
 public class MarketProductEntity {
 
 	/**
