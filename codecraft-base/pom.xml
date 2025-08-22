@@ -23,6 +23,7 @@
 		<module>codecraft-base-messaging</module>
 		<module>codecraft-base-util</module>
 		<module>codecraft-base-quartz</module>
+		<module>codecraft-design-framework</module>
 	</modules>
 
 	<properties>
