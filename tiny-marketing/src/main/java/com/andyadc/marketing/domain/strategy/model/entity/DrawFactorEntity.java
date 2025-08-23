@@ -1,10 +1,15 @@
 package com.andyadc.marketing.domain.strategy.model.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 /**
  * 抽奖因子实体
  */
+@Getter
+@Setter
 public class DrawFactorEntity {
 
 	/**
@@ -19,30 +24,6 @@ public class DrawFactorEntity {
 	 * 结束时间
 	 */
 	private LocalDateTime endDateTime;
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public Integer getStrategyId() {
-		return strategyId;
-	}
-
-	public void setStrategyId(Integer strategyId) {
-		this.strategyId = strategyId;
-	}
-
-	public LocalDateTime getEndDateTime() {
-		return endDateTime;
-	}
-
-	public void setEndDateTime(LocalDateTime endDateTime) {
-		this.endDateTime = endDateTime;
-	}
 
 	@Override
 	public String toString() {

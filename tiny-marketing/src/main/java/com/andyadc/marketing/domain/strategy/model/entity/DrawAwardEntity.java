@@ -1,8 +1,13 @@
 package com.andyadc.marketing.domain.strategy.model.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * 抽奖奖品实体
  */
+@Getter
+@Setter
 public class DrawAwardEntity {
 
 	/**
@@ -21,38 +26,6 @@ public class DrawAwardEntity {
 	 * 奖品顺序号
 	 */
 	private Integer sort;
-
-	public Integer getAwardId() {
-		return awardId;
-	}
-
-	public void setAwardId(Integer awardId) {
-		this.awardId = awardId;
-	}
-
-	public String getAwardTitle() {
-		return awardTitle;
-	}
-
-	public void setAwardTitle(String awardTitle) {
-		this.awardTitle = awardTitle;
-	}
-
-	public String getAwardConfig() {
-		return awardConfig;
-	}
-
-	public void setAwardConfig(String awardConfig) {
-		this.awardConfig = awardConfig;
-	}
-
-	public Integer getSort() {
-		return sort;
-	}
-
-	public void setSort(Integer sort) {
-		this.sort = sort;
-	}
 
 	@Override
 	public String toString() {
