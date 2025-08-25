@@ -1,9 +1,8 @@
 package com.andyadc.codecraft.base.web.auth.interceptor;
 
 import com.andyadc.codecraft.base.web.interceptor.BaseWebInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class BaseAuthWebInterceptor extends BaseWebInterceptor {
 
