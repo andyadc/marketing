@@ -27,7 +27,7 @@
 
 		<lombok.version>1.18.38</lombok.version>
 
-		<jakarta-validation.version>2.0.2</jakarta-validation.version>
+		<jakarta-validation.version>3.0.2</jakarta-validation.version>
 
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
