@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.config.persistence;
+package com.andyadc.marketing.infrastructure.configuration.persistence;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -18,32 +18,35 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(
-	basePackages = {"com.andyadc.marketing.infrastructure.persistence.group"},
-	sqlSessionFactoryRef = "groupbuyingSqlSessionFactory"
+	basePackages = {"com.andyadc.marketing.infrastructure.persistence.marketing"},
+	sqlSessionFactoryRef = "marketingSqlSessionFactory"
 )
 @EnableTransactionManagement(proxyTargetClass = true)
-public class GroupBuyingPersistenceConfig {
+public class MarketingPersistenceConfig {
 
-	@Bean(name = "groupbuyingDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.groupbuying")
+	@Bean(name = "marketingDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.marketing")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "groupbuyingSqlSessionFactory")
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("groupbuyingDataSource") DataSource dataSource) throws Exception {
+	@Bean(name = "marketingSqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("marketingDataSource") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
-
 		Resource[] mapperResources = new PathMatchingResourcePatternResolver()
-			.getResources("classpath:mappings/group/*Mapper.xml");
+			.getResources("classpath:mappings/marketing/*Mapper.xml");
 		sqlSessionFactoryBean.setMapperLocations(mapperResources);
+
+		Resource configResource = new PathMatchingResourcePatternResolver()
+			.getResource("classpath:mybatis-config.xml");
+		sqlSessionFactoryBean.setConfigLocation(configResource);
 
 		return sqlSessionFactoryBean.getObject();
 	}
 
-	@Bean(name = "groupbuyingTransactionManager")
-	public TransactionManager transactionManager(@Qualifier("groupbuyingDataSource") DataSource dataSource) {
+	@Bean(name = "marketingTransactionManager")
+	public TransactionManager transactionManager(@Qualifier("marketingDataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 

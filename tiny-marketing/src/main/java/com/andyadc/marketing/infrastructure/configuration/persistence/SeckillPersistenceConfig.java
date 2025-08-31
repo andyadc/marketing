@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.config.persistence;
+package com.andyadc.marketing.infrastructure.configuration.persistence;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -18,24 +18,25 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(
-	basePackages = {"com.andyadc.marketing.infrastructure.persistence.marketing"},
-	sqlSessionFactoryRef = "marketingSqlSessionFactory"
+	basePackages = {"com.andyadc.marketing.infrastructure.persistence.seckill"},
+	sqlSessionFactoryRef = "seckillSqlSessionFactory"
 )
 @EnableTransactionManagement(proxyTargetClass = true)
-public class MarketingPersistenceConfig {
+public class SeckillPersistenceConfig {
 
-	@Bean(name = "marketingDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.marketing")
+	@Bean(name = "seckillDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.seckill")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "marketingSqlSessionFactory")
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("marketingDataSource") DataSource dataSource) throws Exception {
+	@Bean(name = "seckillSqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("seckillDataSource") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
+
 		Resource[] mapperResources = new PathMatchingResourcePatternResolver()
-			.getResources("classpath:mappings/marketing/*Mapper.xml");
+			.getResources("classpath:mappings/seckill/*Mapper.xml");
 		sqlSessionFactoryBean.setMapperLocations(mapperResources);
 
 		Resource configResource = new PathMatchingResourcePatternResolver()
@@ -45,8 +46,8 @@ public class MarketingPersistenceConfig {
 		return sqlSessionFactoryBean.getObject();
 	}
 
-	@Bean(name = "marketingTransactionManager")
-	public TransactionManager transactionManager(@Qualifier("marketingDataSource") DataSource dataSource) {
+	@Bean(name = "seckillTransactionManager")
+	public TransactionManager transactionManager(@Qualifier("seckillDataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 

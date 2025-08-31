@@ -1,4 +1,4 @@
-package com.andyadc.marketing.infrastructure.config;
+package com.andyadc.marketing.infrastructure.configuration;
 
 import com.andyadc.codecraft.base.core.serializer.JodaDateTimeJsonDeserializer;
 import com.andyadc.codecraft.base.core.serializer.JodaDateTimeJsonSerializer;
@@ -44,8 +44,7 @@ public class RedisConfig {
 			.build();
 		objectMapper.activateDefaultTyping(typeValidator, ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
 
-		Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
-		jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
+		Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(objectMapper, Object.class);
 
 		redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
 		return redisTemplate;
