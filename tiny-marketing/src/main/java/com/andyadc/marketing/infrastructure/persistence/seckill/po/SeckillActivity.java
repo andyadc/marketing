@@ -1,14 +1,26 @@
 package com.andyadc.marketing.infrastructure.persistence.seckill.po;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
+@Entity
 public class SeckillActivity implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * 秒杀活动id
 	 */
+	@Id
 	private Long id;
 	/**
 	 * 活动名称
@@ -30,52 +42,4 @@ public class SeckillActivity implements Serializable {
 	 * 活动秒杀
 	 */
 	private String activityDesc;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getActivityName() {
-		return activityName;
-	}
-
-	public void setActivityName(String activityName) {
-		this.activityName = activityName == null ? null : activityName.trim();
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public LocalDateTime getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(LocalDateTime startTime) {
-		this.startTime = startTime;
-	}
-
-	public LocalDateTime getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(LocalDateTime endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getActivityDesc() {
-		return activityDesc;
-	}
-
-	public void setActivityDesc(String activityDesc) {
-		this.activityDesc = activityDesc == null ? null : activityDesc.trim();
-	}
 }

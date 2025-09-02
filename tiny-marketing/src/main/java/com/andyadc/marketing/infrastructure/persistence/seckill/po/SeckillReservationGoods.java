@@ -1,14 +1,25 @@
 package com.andyadc.marketing.infrastructure.persistence.seckill.po;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
+@Entity
 public class SeckillReservationGoods implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 	/**
 	 * 数据主键
 	 */
+	@Id
 	private Long id;
 	/**
 	 * 预约配置id
@@ -34,60 +45,4 @@ public class SeckillReservationGoods implements Serializable {
 	 * 状态，1：正常；0：删除
 	 */
 	private Integer status;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getReserveConfigId() {
-		return reserveConfigId;
-	}
-
-	public void setReserveConfigId(Long reserveConfigId) {
-		this.reserveConfigId = reserveConfigId;
-	}
-
-	public Long getGoodsId() {
-		return goodsId;
-	}
-
-	public void setGoodsId(Long goodsId) {
-		this.goodsId = goodsId;
-	}
-
-	public String getGoodsName() {
-		return goodsName;
-	}
-
-	public void setGoodsName(String goodsName) {
-		this.goodsName = goodsName == null ? null : goodsName.trim();
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public LocalDateTime getReserveTime() {
-		return reserveTime;
-	}
-
-	public void setReserveTime(LocalDateTime reserveTime) {
-		this.reserveTime = reserveTime;
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
 }

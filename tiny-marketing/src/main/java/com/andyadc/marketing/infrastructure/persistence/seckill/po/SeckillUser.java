@@ -1,15 +1,26 @@
 package com.andyadc.marketing.infrastructure.persistence.seckill.po;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
+@Entity
 public class SeckillUser implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 用户id
 	 */
+	@Id
 	private Long id;
 	/**
 	 * 用户名
@@ -25,52 +36,4 @@ public class SeckillUser implements Serializable {
 	private Integer status;
 	private LocalDateTime createTime;
 	private LocalDateTime updateTime;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username == null ? null : username.trim();
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password == null ? null : password.trim();
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public LocalDateTime getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(LocalDateTime createTime) {
-		this.createTime = createTime;
-	}
-
-	public LocalDateTime getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(LocalDateTime updateTime) {
-		this.updateTime = updateTime;
-	}
 }
