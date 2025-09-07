@@ -1,18 +1,26 @@
 package com.andyadc.marketing.infrastructure.persistence.marketing.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
 public class Award implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = -795765066427670323L;
 
 	// 自增主键
+	@Id
 	private Long id;
 	/**
 	 * 抽奖奖品ID - 内部流转使用
@@ -38,63 +46,6 @@ public class Award implements Serializable {
 	 * 更新时间
 	 */
 	private LocalDateTime updateTime;
-
-	@Id
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getAwardId() {
-		return awardId;
-	}
-
-	public void setAwardId(Integer awardId) {
-		this.awardId = awardId;
-	}
-
-	public String getAwardKey() {
-		return awardKey;
-	}
-
-	public void setAwardKey(String awardKey) {
-		this.awardKey = awardKey;
-	}
-
-	public String getAwardConfig() {
-		return awardConfig;
-	}
-
-	public void setAwardConfig(String awardConfig) {
-		this.awardConfig = awardConfig;
-	}
-
-	public String getAwardDesc() {
-		return awardDesc;
-	}
-
-	public void setAwardDesc(String awardDesc) {
-		this.awardDesc = awardDesc;
-	}
-
-	public LocalDateTime getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(LocalDateTime createTime) {
-		this.createTime = createTime;
-	}
-
-	public LocalDateTime getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(LocalDateTime updateTime) {
-		this.updateTime = updateTime;
-	}
 
 	@PrePersist
 	public void prePersist() {

@@ -1,18 +1,26 @@
 package com.andyadc.marketing.infrastructure.persistence.marketing.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
 public class RuleTree implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    @Serial
+	private static final long serialVersionUID = 1L;
 
     /**
      * 自增ID
      */
+	@Id
     private Long id;
     /**
      * 规则树ID
@@ -38,61 +46,4 @@ public class RuleTree implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
-
-    @Id
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTreeId() {
-        return treeId;
-    }
-
-    public void setTreeId(String treeId) {
-        this.treeId = treeId == null ? null : treeId.trim();
-    }
-
-    public String getTreeName() {
-        return treeName;
-    }
-
-    public void setTreeName(String treeName) {
-        this.treeName = treeName == null ? null : treeName.trim();
-    }
-
-    public String getTreeDesc() {
-        return treeDesc;
-    }
-
-    public void setTreeDesc(String treeDesc) {
-        this.treeDesc = treeDesc == null ? null : treeDesc.trim();
-    }
-
-    public String getTreeNodeRuleKey() {
-        return treeNodeRuleKey;
-    }
-
-    public void setTreeNodeRuleKey(String treeNodeRuleKey) {
-        this.treeNodeRuleKey = treeNodeRuleKey == null ? null : treeNodeRuleKey.trim();
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(LocalDateTime updateTime) {
-        this.updateTime = updateTime;
-    }
 }
