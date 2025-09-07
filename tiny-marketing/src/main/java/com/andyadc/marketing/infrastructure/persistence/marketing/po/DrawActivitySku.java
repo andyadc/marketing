@@ -1,18 +1,26 @@
 package com.andyadc.marketing.infrastructure.persistence.marketing.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
 public class DrawActivitySku implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 自增ID
 	 */
+	@Id
 	private Long id;
 	/**
 	 * 商品sku - 把每一个组合当做一个商品
@@ -42,69 +50,4 @@ public class DrawActivitySku implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
-
-    @Id
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getSku() {
-        return sku;
-    }
-
-    public void setSku(Integer sku) {
-        this.sku = sku;
-    }
-
-    public Integer getActivityId() {
-        return activityId;
-    }
-
-    public void setActivityId(Integer activityId) {
-        this.activityId = activityId;
-    }
-
-    public Integer getActivityCountId() {
-        return activityCountId;
-    }
-
-    public void setActivityCountId(Integer activityCountId) {
-        this.activityCountId = activityCountId;
-    }
-
-    public Integer getStockCount() {
-        return stockCount;
-    }
-
-    public void setStockCount(Integer stockCount) {
-        this.stockCount = stockCount;
-    }
-
-    public Integer getStockCountSurplus() {
-        return stockCountSurplus;
-    }
-
-    public void setStockCountSurplus(Integer stockCountSurplus) {
-        this.stockCountSurplus = stockCountSurplus;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(LocalDateTime updateTime) {
-        this.updateTime = updateTime;
-    }
 }
