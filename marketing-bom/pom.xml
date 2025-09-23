@@ -18,14 +18,14 @@
 	<properties>
 		<base.properties>1.0.0</base.properties>
 
-		<spring-boot.version>3.5.5</spring-boot.version>
+		<spring-boot.version>3.5.6</spring-boot.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-spring-boot-starter.version>3.0.5</mybatis-spring-boot-starter.version>
-		<guava.version>33.3.1-jre</guava.version>
+		<guava.version>33.5.0-jre</guava.version>
 		<joda-time.version>2.13.1</joda-time.version>
 		<shedlock.version>6.10.0</shedlock.version>
 
-		<lombok.version>1.18.38</lombok.version>
+		<lombok.version>1.18.40</lombok.version>
 
 		<jakarta-validation.version>3.0.2</jakarta-validation.version>
 
@@ -68,6 +68,11 @@
 			<dependency>
 				<groupId>com.andyadc.codecraft</groupId>
 				<artifactId>codecraft-base-web</artifactId>
+				<version>${base.properties}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andyadc.codecraft</groupId>
+				<artifactId>codecraft-base-persistence</artifactId>
 				<version>${base.properties}</version>
 			</dependency>
 

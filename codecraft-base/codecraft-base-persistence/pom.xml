@@ -11,12 +11,18 @@
 
 	<artifactId>codecraft-base-persistence</artifactId>
 
+	<packaging>jar</packaging>
+
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.andyadc.codecraft</groupId>
 			<artifactId>codecraft-base-core</artifactId>
